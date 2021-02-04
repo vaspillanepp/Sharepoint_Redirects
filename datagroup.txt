@@ -1,0 +1,2827 @@
+
+#To get the Sync Status of the F5s
+
+	tmsh show /cm sync-status
+
+
+#Format of Command
+#tmsh list /ltm data-group internal <data group name>
+
+	tmsh list /ltm data-group internal datagroup_uri_list_lc
+
+#Format of Command
+#tmsh modify /ltm data-group internal <datagroup name> add { <key> { data <value> } }
+
+
+#Examples from migration #17 
+#In our case the <key> is the "from" and the <value> is the "to" in the redirects
+	tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/mhvproductdocs { data dvagov.sharepoint.com/sites/mhvproductdocs } }
+	tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/NCA { data dvagov.sharepoint.com/sites/NCA } }
+	tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/VBACalculatorProject { data dvagov.sharepoint.com/sites/VBACalculatorProject } }
+	tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/MHVReDesign { data dvagov.sharepoint.com/sites/MHVReDesign } }
+	tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/eII { data dvagov.sharepoint.com/sites/eII } }
+	tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/VRMVIERS { data dvagov.sharepoint.com/sites/OITEPMOVRMVIERS } }
+
+
+#To get the Sync Status of the F5s
+	tmsh show /cm sync-status
+
+#Format Command to sync up the F5s
+#tmsh run /cm config-sync to-group <failover device group name>
+
+	tmsh run /cm config-sync to-group sync-failover-device-group
+
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/PsychologyTrainingCouncil { data dvagov.sharepoint.com/sites/PsychologyTrainingCouncil } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/SAO { data dvagov.sharepoint.com/sites/SAO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/edw { data dvagov.sharepoint.com/sites/edw } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/MHVsocialmedia { data dvagov.sharepoint.com/sites/MHVsocialmedia } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/applications/VistAImaging { data dvagov.sharepoint.com/sites/OITEPMOVistAImaging } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/enterpriseservices { data dvagov.sharepoint.com/sites/epmoenterpriseservices } }
+
+
+http://vaww.oed.portal.va.gov/applications/VistAImaging/abcd
+https://dvagov.sharepoint.com/sites/OITEPMOVistAImaging/abcd
+
+
+http://vaww.oed.portal.va.gov/applications/VistAImaging/abcd
+https://dvagov.sharepoint.com/sites/OITEPMOVistAImaging/abcd
+
+
+###############################
+#MIGRATION 18
+###############################
+
+tmsh show /cm sync-status
+
+tmsh run /cm config-sync to-group sync-failover-device-group
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/oitcommunications { data dvagov.sharepoint.com/sites/oitcommunications } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vistaradiology { data dvagov.sharepoint.com/sites/vistaradiology } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ESSS { data dvagov.sharepoint.com/sites/ESSS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/NCAConferences { data dvagov.sharepoint.com/sites/NCAConferences } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ARRA_Recovery { data dvagov.sharepoint.com/sites/ARRA_Recovery } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/SID-Policies { data dvagov.sharepoint.com/sites/SID-Policies } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/outreachcoordination { data dvagov.sharepoint.com/sites/outreachcoordination } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/DSSProject { data dvagov.sharepoint.com/sites/DSSProject } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ETMHardware { data dvagov.sharepoint.com/sites/ETMHardware } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vbaacquisitionstaff { data dvagov.sharepoint.com/sites/vbaacquisitionstaff } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/IIP { data dvagov.sharepoint.com/sites/IIP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/cab { data dvagov.sharepoint.com/sites/cab } }
+
+tmsh show /cm sync-status
+
+tmsh run /cm config-sync to-group sync-failover-device-group
+
+
+
+vaww.vashare.oit.va.gov/sites/oto  to https://dvagov.sharepoint.com/sites/epmooto 
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/oto { data dvagov.sharepoint.com/sites/epmooto } }
+
+
+
+tmsh show /cm sync-status
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/EArelease { data dvagov.sharepoint.com/sites/EArelease  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/products/das { data dvagov.sharepoint.com/sites/OITEPMODataSrvcs } }
+
+tmsh show /cm sync-status
+
+tmsh run /cm config-sync to-group sync-failover-device-group
+
+
+
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/products/mbms/home { data dvagov.sharepoint.com/sites/OITEPMOMBMS } }tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/products/automate_gi_bill { data dvagov.sharepoint.com/sites/OITEPMOECPIC } }tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/pmas_bus_ofc { data dvagov.sharepoint.com/sites/OITEPMOPBO } }
+
+
+
+vaww.oed.portal.va.gov/products/mbms/home/
+https://dvagov.sharepoint.com/sites/OITEPMOMBMS/
+vaww.oed.portal.va.gov/products/automate_gi_bill/
+https://dvagov.sharepoint.com/sites/OITEPMOECPIC/
+vaww.oed.portal.va.gov/pmas_bus_ofc/
+https://dvagov.sharepoint.com/sites/OITEPMOPBO/ 
+
+
+
+
+
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/epmoprocess { data dvagov.sharepoint.com/sites/OITEPMOProcess } }tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/HRA { data dvagov.sharepoint.com/sites/OITEPMOHRA } }
+
+
+
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/VBASafety { data dvagov.sharepoint.com/sites/vbasafety } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/tobacco { data dvagov.sharepoint.com/sites/VHAtobacco } }
+
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/FHIE_BHIE { data dvagov.sharepoint.com/sites/OITFHIEBHIE } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/bcro { data dvagov.sharepoint.com/sites/VHAbcro } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/IMPersonService { data dvagov.sharepoint.com/sites/VHAimpersonservice } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/Skype { data dvagov.sharepoint.com/sites/OITSkype } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/creator { data dvagov.sharepoint.com/sites/OITCreator } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/dmo/ { data dvagov.sharepoint.com/sites/OITEPMOIAS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/veo { data dvagov.sharepoint.com/sites/VACObcro } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/VRWKM { data dvagov.sharepoint.com/sites/VBAVRWKM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/2019AKGAG { data dvagov.sharepoint.com/sites/VHA2019AKGAG } }
+
+
+
+
+
+
+###############################
+#MIGRATION 28
+###############################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/mhs { data dvagov.sharepoint.com/sites/VHAmhs } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/genisis/ { data dvagov.sharepoint.com/sites/OITEPMOGenisis/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/myVA/ { data dvagov.sharepoint.com/sites/OITEPMOMyVA/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/pre/ { data dvagov.sharepoint.com/sites/OITEPMOPRE/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/VBMS/ { data dvagov.sharepoint.com/sites/OITEPMOVBMS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vistaevolution { data dvagov.sharepoint.com/sites/VACOVE/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/vha_oi_admin { data dvagov.sharepoint.com/sites/VHAOIAdmin } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/EAP { data dvagov.sharepoint.com/sites/OITEPMOEAP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/mpdu { data dvagov.sharepoint.com/sites/OITmpdu } }
+					
+
+
+
+###############################
+#MIGRATION 29
+###############################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/CareCoordination { data dvagov.sharepoint.com/sites/VHACareCoordination } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/LeadershipBayPines { data dvagov.sharepoint.com/sites/VBALeadershipBayPines } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/respiratorycare { data dvagov.sharepoint.com/sites/vharespiratorycare } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/saturdaypay { data dvagov.sharepoint.com/sites/vhasaturdaypay } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/ICE/ { data dvagov.sharepoint.com/sites/OITEMPOVSignals/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/rams/ { data dvagov.sharepoint.com/sites/OITEPMORAMS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/registries/ { data dvagov.sharepoint.com/sites/OITEPMORegistries/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/workmgmt/wfminternal/timeandleave/ { data dvagov.sharepoint.com/sites/OITEPMOTL/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/workmgmt/Workforce%20Shaping%20and%20Compliance/ { data dvagov.sharepoint.com/sites/OITEPMOWSC/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/osp { data dvagov.sharepoint.com/sites/VBAOSP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/STL-331 { data dvagov.sharepoint.com/sites/VBASTL-331 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/IPT { data dvagov.sharepoint.com/sites/VHAIPT } }
+
+
+###############################
+#MIGRATION 30
+###############################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ARK { data dvagov.sharepoint.com/sites/VHAARK } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/rdpc { data dvagov.sharepoint.com/sites/OITrdpc } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/products/vler/nwhin/ { data dvagov.sharepoint.com/sites/OITEPMONHWIN/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vrm/MSTI/ { data dvagov.sharepoint.com/sites/OITEPMOMSDSCGS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/EPSafetySecurity { data dvagov.sharepoint.com/sites/VBAEPSafetySecurity } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/VBAPhysicalSecurity { data dvagov.sharepoint.com/sites/VBAPhysicalSecurity } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ITOPSCSI { data dvagov.sharepoint.com/sites/OITITOPSCSI } }
+
+
+
+
+vaww.infoshare.va.gov/sites/ARK	dvagov.sharepoint.com/sites/VHAARKvaww.infoshare.va.gov/sites/rdpc	dvagov.sharepoint.com/sites/OITrdpcvaww.oed.portal.va.gov/products/vler/nhwin/	dvagov.sharepoint.com/sites/OITEPMONHWIN/vaww.oed.portal.va.gov/sites/vrm/MSTI/	dvagov.sharepoint.com/sites/OITEPMOMSDSCGS/vaww.vashare.oit.va.gov/sites/ITOPSCSI	dvagov.sharepoint.com/sites/OITITOPSCSIvaww.vashare.vba.va.gov/sites/EPSafetySecurity	dvagov.sharepoint.com/sites/VBAEPSafetySecurityvaww.vashare.vba.va.gov/sites/VBAPhysicalSecurity	dvagov.sharepoint.com/sites/VBAPhysicalSecurity
+
+Previous Site URL	New Site URL
+vaww.infoshare.va.gov/sites/ARK	dvagov.sharepoint.com/sites/VHAARKvaww.infoshare.va.gov/sites/rdpc	dvagov.sharepoint.com/sites/OITrdpcvaww.oed.portal.va.gov/products/vler/nhwin/	dvagov.sharepoint.com/sites/OITEPMONHWIN/vaww.oed.portal.va.gov/sites/vrm/MSTI/	dvagov.sharepoint.com/sites/OITEPMOMSDSCGS/vaww.vashare.oit.va.gov/sites/ITOPSCSI	dvagov.sharepoint.com/sites/OITITOPSCSIvaww.vashare.vba.va.gov/sites/EPSafetySecurity	dvagov.sharepoint.com/sites/VBAEPSafetySecurityvaww.vashare.vba.va.gov/sites/VBAPhysicalSecurity	dvagov.sharepoint.com/sites/VBAPhysicalSecurity
+
+
+
+
+###############################
+#MIGRATION 30
+###############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/nexgen_vcms/ { data dvagov.sharepoint.com/sites/OITEPMOVEMS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/sts/ { data dvagov.sharepoint.com/sites/VHASTS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/VAPE/ { data dvagov.sharepoint.com/sites/OITEPMOVAPE/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/oaemduediligence { data dvagov.sharepoint.com/sites/vacooaemuediligence } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/supportservicesknowledgemanagement { data dvagov.sharepoint.com/sites/vacosupportservicesKM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/vbadaywatch { data dvagov.sharepoint.com/sites/vbadaywatch } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/nfoiso { data dvagov.sharepoint.com/sites/oitnfoiso } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/IPT { data dvagov.sharepoint.com/sites/OITIPT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/program_management/ppo { data dvagov.sharepoint.com/sites/OITEPMOPPO/ } }
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vrm/EHBD/ { data dvagov.sharepoint.com/sites/OITEPMOEHBD } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vrm/UAT/ { data dvagov.sharepoint.com/sites/OITEPMOVEOUAT/ } }
+
+
+###############################
+#MIGRATION 32
+###############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/20P { data dvagov.sharepoint.com/sites/vba20P } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/pm/iehr/vista_evolution/ { data dvagov.sharepoint.com/sites/VACOVE2/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vrm/VAM/ { data dvagov.sharepoint.com/sites/OITEPMOVAM/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/oteei { data dvagov.sharepoint.com/sites/vbaoteei } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/wasp { data dvagov.sharepoint.com/sites/VBAWASP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/TelehealthDirector { data dvagov.sharepoint.com/sites/VHATelehealthDirector } }
+
+
+
+###############################
+#MIGRATION 33
+###############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/DCPOBackup { data dvagov.sharepoint.com/sites/VHADCPOBackup } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/nonvacare { data dvagov.sharepoint.com/sites/VHAnonvacare } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/PSESLBackOffice { data dvagov.sharepoint.com/sites/OITPSESLBackOffice } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/VHATCFINTERNSclassof2007 { data dvagov.sharepoint.com/sites/VHATCFINTERNS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/HealthEVet { data dvagov.sharepoint.com/sites/VBAHealthEVet } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/portlandvaro { data dvagov.sharepoint.com/sites/vbaportlandvaro } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/WesternHRC395 { data dvagov.sharepoint.com/sites/VBAWesternHRC395 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/PMDB { data dvagov.sharepoint.com/sites/VHAPMDB } }
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/TS { data dvagov.sharepoint.com/sites/VHATS } }
+		
+
+###############################
+#MIGRATION 34
+###############################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ClinicalPharmacy { data dvagov.sharepoint.com/sites/VHAClinicalPharmacy } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/pcsdiscuss { data dvagov.sharepoint.com/sites/VHApcsdiscuss } }
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/pm/iehr/vista_evolution/ { data dvagov.sharepoint.com/sites/VACOVE2/ } }
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/bgs/ { data dvagov.sharepoint.com/sites/OITEPMOBGS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/Clinical_Procedures/ { data dvagov.sharepoint.com/sites/OITEPMOClinicalProcedures/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/HMPE_SMKB/ { data dvagov.sharepoint.com/sites/OITEPMOHMPEMgmt/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/mhv_portal/ { data dvagov.sharepoint.com/sites/OITEPMOMHV/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/pmas_dashboard/ { data dvagov.sharepoint.com/sites/OITEPMOPMASDashBoard/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/virtualva/ { data dvagov.sharepoint.com/sites/OITEPMOLCM/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/pmc { data dvagov.sharepoint.com/sites/VACOPMC } }
+
+
+##############################
+#MIGRATION 35
+###############################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/FMBT { data dvagov.sharepoint.com/sites/VACOFMBT } }
+
+
+
+##############################
+#MIGRATION 35 (part 2)
+###############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/OEO { data dvagov.sharepoint.com/sites/VBAOEO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vhahl { data dvagov.sharepoint.com/sites/VHAHL } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/Oakland_Northern_California_VBA_Team_Secure_Portal { data dvagov.sharepoint.com/sites/VBAONBC_Team_Secure_Portal } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/vhaservicecenter { data dvagov.sharepoint.com/sites/VHAServiceCenter } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/EOITAMCloudTeam { data dvagov.sharepoint.com/sites/OITEOITAMCloudTeam } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/r5is { data dvagov.sharepoint.com/sites/OITr5is } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/SOA { data dvagov.sharepoint.com/sites/OITSOA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/PSIM { data dvagov.sharepoint.com/sites/VACOPSIM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/EDU_SSD { data dvagov.sharepoint.com/sites/VBAEDU_SSD } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/officeofmanagement { data dvagov.sharepoint.com/sites/VBAOfficeOfManagement } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/telehealthquality { data dvagov.sharepoint.com/sites/VHATeleHealthQuality } }
+
+
+##############################
+#MIGRATION 36
+###############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/pm/corporate/ { data dvagov.sharepoint.com/sites/OITEPMODCorporate/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/pm/hppmd/ { data dvagov.sharepoint.com/sites/OITEPMOHealth/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/cvt/ { data dvagov.sharepoint.com/sites/OITEPMOTMP/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/cvt2/ { data dvagov.sharepoint.com/sites/OITEPMOTMP2/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/jalfhcc/ { data dvagov.sharepoint.com/sites/OITEPMOJALFHCC/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/mobile_apps/ { data dvagov.sharepoint.com/sites/OITEPMOMobileProgram/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/PCL5MHAS/ { data dvagov.sharepoint.com/sites/OITEPMOPCL5Phase1/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/primavera/ { data dvagov.sharepoint.com/sites/OITEPMOPrimavera/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/vetsnetfas/ { data dvagov.sharepoint.com/sites/OITEPMOVFAS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/via/ { data dvagov.sharepoint.com/sites/OITEPMOVIA/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/vinci/ { data dvagov.sharepoint.com/sites/OITEPMOVINCI/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/diabetes { data dvagov.sharepoint.com/sites/VHADiabetes } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/par { data dvagov.sharepoint.com/sites/VACOPAR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/product_effectiveness_group { data dvagov.sharepoint.com/sites/VHAproducteffectivenessgroup } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/v21 { data dvagov.sharepoint.com/sites/OITV21 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/ORMFiscalSystems241D { data dvagov.sharepoint.com/sites/VBAORMFiscalSystems241D } }
+
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/AIMS { data dvagov.sharepoint.com/sites/OITAIMS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/HRCDetroit { data dvagov.sharepoint.com/sites/VBAHRCDetroit } }
+
+
+##############################
+#MIGRATION 37
+###############################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vchio { data dvagov.sharepoint.com/sites/VHAVCHIO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/rxsu2 { data dvagov.sharepoint.com/sites/OITrxsu2 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/nnu2016 { data dvagov.sharepoint.com/sites/VACONNU2016 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/miw-330 { data dvagov.sharepoint.com/sites/VBAMIW-330 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/vbaofficeofresourcemanagement { data dvagov.sharepoint.com/sites/VBAOFM } }
+
+#####tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.linkhr.portal.va.gov { data dvagov.sharepoint.com/sites/VACOLinkHR } }
+
+vaww.infoshare.va.gov/sites/VCHIO
+dvagov.sharepoint.com/sites/VHAVCHIO
+vaww.linkhr.portal.va.gov
+dvagov.sharepoint.com/sites/VACOLinkHR
+vaww.vashare.oit.va.gov/sites/rmd
+dvagov.sharepoint.com/sites/OITRMD
+vaww.vashare.oit.va.gov/sites/rxsu2
+dvagov.sharepoint.com/sites/OITrxsu2
+vaww.vashare.vaco.va.gov/sites/NNU2016
+dvagov.sharepoint.com/sites/VACONNU2016
+vaww.vashare.vba.va.gov/sites/MIW-330
+dvagov.sharepoint.com/sites/VBAMIW-330
+vaww.vashare.vba.va.gov/sites/VBAOfficeOfResourceManagement
+dvagov.sharepoint.com/sites/VBAOFM
+
+
+
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+
+
+##############################
+#MIGRATION 38
+###############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbasocialmedia { data dvagov.sharepoint.com/sites/VBAsocialmedia } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/pm/hppmd/ { data dvagov.sharepoint.com/sites/OITEPMOHealth/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/crrc { data dvagov.sharepoint.com/sites/OITCRRC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/facilitation { data dvagov.sharepoint.com/sites/OITFacilitation } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/174 { data dvagov.sharepoint.com/sites/VACO174 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/houston { data dvagov.sharepoint.com/sites/VBAHouston } }
+
+
+
+##############################
+#MIGRATION 39
+###############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/energytraining/ { data dvagov.sharepoint.com/sites/VHAenergytraining } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/medrecon/ { data dvagov.sharepoint.com/sites/VHAMedRecon } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/mps/ { data dvagov.sharepoint.com/sites/VACOMPS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/opcc/ { data dvagov.sharepoint.com/sites/VHAOPCC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/scihubandspokes/ { data dvagov.sharepoint.com/sites/VHAscihubandspokes } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/trainingstrategy/ { data dvagov.sharepoint.com/sites/VHATrainingStrategy } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/pm/ { data dvagov.sharepoint.com/sites/OITEPMOPM/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/rdt/ { data dvagov.sharepoint.com/sites/VBARDT } }
+
+
+
+##############################
+#MIGRATION 40
+##############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/epg/ { data dvagov.sharepoint.com/sites/VHAEPG } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/paloalto/ { data dvagov.sharepoint.com/sites/VHApaloalto } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/pcscoe/ { data dvagov.sharepoint.com/sites/VHAPCSCOE } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vhaspt/ { data dvagov.sharepoint.com/sites/VHASPT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/itbo/pm/ { data dvagov.sharepoint.com/sites/OITPM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/2012scip/ { data dvagov.sharepoint.com/sites/VACO2012SCIP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/2018scip/ { data dvagov.sharepoint.com/sites/VACO2018SCIP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/durham/ { data dvagov.sharepoint.com/sites/VHADurham } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/mom/ { data dvagov.sharepoint.com/sites/OITMOM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/crodo/ { data dvagov.sharepoint.com/sites/VBACRODO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/vbaohr/ { data dvagov.sharepoint.com/sites/VBAOHR } }
+
+##############################
+#MIGRATION 41   8/19/19
+##############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/geriatrics/ { data dvagov.sharepoint.com/sites/VHAGeriatrics } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbarmo/ { data dvagov.sharepoint.com/sites/VBARMO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/splncio/ { data dvagov.sharepoint.com/sites/OITSPLNCIO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/dmc/ { data dvagov.sharepoint.com/sites/OITDMC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/hspd12pmo/ { data dvagov.sharepoint.com/sites/VACOHSPD12PMO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/omega/ { data dvagov.sharepoint.com/sites/OITOmega } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/ipera/ { data dvagov.sharepoint.com/sites/VACOIPERA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/bdnsupport/ { data dvagov.sharepoint.com/sites/VBABDNSupport } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/lin/ { data dvagov.sharepoint.com/sites/VBALin } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/saj-355/ { data dvagov.sharepoint.com/sites/VBASAJ355 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/vetcenters/ { data dvagov.sharepoint.com/sites/VHAVetcenters } }
+
+
+
+##############################
+#MIGRATION 41.1   8/21/19
+##############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vrm/crmudkm/ { data dvagov.sharepoint.com/sites/OITEPMOCRM/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vrm/iam/ { data dvagov.sharepoint.com/sites/OITEPMOIAM/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vrm/pmo/ { data dvagov.sharepoint.com/sites/OITEPMOVRMPMO/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/vrm/ss/ { data dvagov.sharepoint.com/sites/OITEPMOSS/ } }
+
+
+##############################
+#MIGRATION 42   8/26/19
+##############################
+
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/edt/ { data dvagov.sharepoint.com/sites/VBAEDT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/integratedethics/ { data dvagov.sharepoint.com/sites/VHAIntegratedEthics } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/iris/ { data dvagov.sharepoint.com/sites/OITIRIS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/nic/ { data dvagov.sharepoint.com/sites/VBANIC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/041budget/ { data dvagov.sharepoint.com/sites/VACO041budget } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/eulis/ { data dvagov.sharepoint.com/sites/VACOEULIS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/rec_therapy/ { data dvagov.sharepoint.com/sites/VHARecTherapy } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/epmd-es/ { data dvagov.sharepoint.com/sites/OITEPMOEPMDES/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/sio/ { data dvagov.sharepoint.com/sites/OITSIO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/uc2011/ { data dvagov.sharepoint.com/sites/vacouc2011 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/cosvba/ { data dvagov.sharepoint.com/sites/VBACOS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/css/ { data dvagov.sharepoint.com/sites/OITEPMOCSS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/vreservice/ { data dvagov.sharepoint.com/sites/VBAVREService } }
+
+
+
+##############################
+#MIGRATION 43 & 44  9/9/19
+##############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/flite-security/ { data dvagov.sharepoint.com/sites/OITFLITESecurity } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/queri/ { data dvagov.sharepoint.com/sites/VHAQueri } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbastat/ { data dvagov.sharepoint.com/sites/VBAStat  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.linkhr.portal.va.gov/ { data dvagov.sharepoint.com/sites/VACOLinkHR  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/vssess/ { data dvagov.sharepoint.com/sites/OITEPMOVSSESS/  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/sites/enterprisetestingservice/ { data dvagov.sharepoint.com/sites/OITEPMOETS/  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/2016scip/ { data dvagov.sharepoint.com/sites/VACO2016SCIP  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/pai/ { data dvagov.sharepoint.com/sites/VBAPAI  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/vrm/ { data dvagov.sharepoint.com/sites/OITEPMOVRMTI/  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/amosharepoint/ { data dvagov.sharepoint.com/sites/VBAAMOSharePoint  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/hou-362/ { data dvagov.sharepoint.com/sites/VBAHOU362  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/milwaukee/ { data dvagov.sharepoint.com/sites/VBAMilwaukee  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/slc/ { data dvagov.sharepoint.com/sites/VBASLC  } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/certification/ { data dvagov.sharepoint.com/sites/VBACertification } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/operationsanalysis/ { data dvagov.sharepoint.com/sites/VBAOperationsAnalysis } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vchioartifactdevelopment/ { data dvagov.sharepoint.com/sites/VHAVCHIOArtifactDevelopment } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/cfm/ { data dvagov.sharepoint.com/sites/VACOCFM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/itrm/ { data dvagov.sharepoint.com/sites/OITITRM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/hbmc/ { data dvagov.sharepoint.com/sites/OITHbmc } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/brand/ { data dvagov.sharepoint.com/sites/VACOBrand } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/den-339/ { data dvagov.sharepoint.com/sites/VBADen339 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/ba/ { data dvagov.sharepoint.com/sites/VHABA } }
+
+##############################
+#MIGRATION 44.1  9/10/19
+##############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/stl-331/ { data dvagov.sharepoint.com/sites/VBASTL-331 } }
+
+	
+##############################
+#MIGRATION 45  09/23/19
+##############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/cmsws/ { data dvagov.sharepoint.com/sites/VHACMSWS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/pact/ { data dvagov.sharepoint.com/sites/VHAPACT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/southernarea/ { data dvagov.sharepoint.com/sites/VBASouthernArea } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ad/ { data dvagov.sharepoint.com/sites/OITAD } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/itamrm/ { data dvagov.sharepoint.com/sites/OITITAMRM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/lva/ { data dvagov.sharepoint.com/sites/VACOLVA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/det-329hrc/ { data dvagov.sharepoint.com/sites/VBADET329HRC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/earea/ { data dvagov.sharepoint.com/sites/VBAEAREA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/pir/ { data dvagov.sharepoint.com/sites/VBAPIR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/pro-304pbtl/ { data dvagov.sharepoint.com/sites/VBAPRO304PBTL } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/eesappealsboardhearings/ { data dvagov.sharepoint.com/sites/VHAEESAppealsBoardHearings } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/innovations/ { data dvagov.sharepoint.com/sites/VHAInnovations } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/omla/ { data dvagov.sharepoint.com/sites/VHAOMLA } }
+
+
+##############################
+#MIGRATION 46 9/30/2019
+##############################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/hsrd/ { data dvagov.sharepoint.com/sites/VHAHSRD } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/itsdadmin/ { data dvagov.sharepoint.com/sites/VHAITSDadmin } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vetsuccess/ { data dvagov.sharepoint.com/sites/VBAVetSuccess } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/wfpinitiative/ { data dvagov.sharepoint.com/sites/VACOWFPInitiative } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/itbo/ops-pi/ { data dvagov.sharepoint.com/sites/OITOPSPI } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/2014scip/ { data dvagov.sharepoint.com/sites/VACO2014SCIP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/2017scip/ { data dvagov.sharepoint.com/sites/VACO2017SCIP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/simlearn/ { data dvagov.sharepoint.com/sites/VBASimLEARN } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vhaproducteffectiveness/ { data dvagov.sharepoint.com/sites/VHAProductEffectiveness } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/strongauth/ { data dvagov.sharepoint.com/sites/OITStrongAuth } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ucis/ { data dvagov.sharepoint.com/sites/OITUCIS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/projectspecialforces/ { data dvagov.sharepoint.com/sites/VACOProjectSpecialForces } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/splncip/ { data dvagov.sharepoint.com/sites/OITSPLNCIO1 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/wacorO349/ { data dvagov.sharepoint.com/sites/VBAWacoRO349 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/was-101ohr/ { data dvagov.sharepoint.com/sites/VBAWAS101OHR } }
+
+###################################
+#MIGRATION 47 10/07/2019 08:50:12
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/den395hrc/ { data dvagov.sharepoint.com/sites/VBADEN395HRC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/oemr/ { data dvagov.sharepoint.com/sites/VACOOEMR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/hrabudgetoffice/ { data dvagov.sharepoint.com/sites/VACOHRABudgetOffice } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/otg/ { data dvagov.sharepoint.com/sites/OITOTG } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/arp/ { data dvagov.sharepoint.com/sites/VHAARP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/oak-343/ { data dvagov.sharepoint.com/sites/VBAOAK343 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/pcaauditportal/ { data dvagov.sharepoint.com/sites/VHAPCAAuditPortal } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/nationalhometeleheath/ { data dvagov.sharepoint.com/sites/VHANationalHomeTeleHealth } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/webcom/ { data dvagov.sharepoint.com/sites/VHAWebCom } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/itopseis/ { data dvagov.sharepoint.com/sites/OITITOPSEIS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/mentalhealth/ { data dvagov.sharepoint.com/sites/VACOMentalHealth } }
+
+
+###################################
+#  MIGRATION 48 10/21/2019 09:15:18
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/splncior05/ { data dvagov.sharepoint.com/sites/VBASPLNCIOR05 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ncptsd%20dissemination%20and%20training/ { data dvagov.sharepoint.com/sites/VHANCPTSDDandT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/pacific/ { data dvagov.sharepoint.com/sites/VBAPacific } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/phipmc/ { data dvagov.sharepoint.com/sites/VBAPHIPMC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vadodhis/ { data dvagov.sharepoint.com/sites/VHAVADoDHIS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ncctelephonequality/ { data dvagov.sharepoint.com/sites/VBANCCTelephoneQuality } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/btmp/ { data dvagov.sharepoint.com/sites/VHABTMP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.nca.va.gov/sites/pps/ { data dvagov.sharepoint.com/sites/NCAPPS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/vhaem/ { data dvagov.sharepoint.com/sites/VHAEM } }
+
+
+###################################
+#  MIGRATION 49 10/28/2019 09:43:18 (email said 48 again, but think it was a typo)
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/atlantaro/ { data dvagov.sharepoint.com/sites/VBAAtlantaRO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/diagnosticservices/ { data dvagov.sharepoint.com/sites/VHADiagnosticservices } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/phillynetwork/ { data dvagov.sharepoint.com/sites/OITPhillyNetwork } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/radonc/ { data dvagov.sharepoint.com/sites/VHARadonc } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vfistrategy/ { data dvagov.sharepoint.com/sites/VBAVFIstrategy } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/administration/budget_execution/ { data dvagov.sharepoint.com/sites/OITEPMOBPE/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/slmb/ { data dvagov.sharepoint.com/sites/OITSLMB } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/hac1/ { data dvagov.sharepoint.com/sites/VHAHAC1 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/tma/ { data dvagov.sharepoint.com/sites/OITTMA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vamisc/ { data dvagov.sharepoint.com/sites/VHAVAMISC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/opensourcelab/ { data dvagov.sharepoint.com/sites/OITOpenSourcelab } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/privacyhub/ { data dvagov.sharepoint.com/sites/OITPrivacyHub } }
+
+###################################
+#  MIGRATION 49.1 10/30/2019 
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/projects/vetsnet/cyberroom/ { data dvagov.sharepoint.com/sites/OITEPMOcyberRoom } }
+
+
+###################################
+#  MIGRATION 50 11/04/2019 09:34:36
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/diagnosticservices/ { data dvagov.sharepoint.com/sites/VHADiagnosticservices } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/cs/ { data dvagov.sharepoint.com/sites/VHACS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/providencerophotobook/ { data dvagov.sharepoint.com/sites/VBAProvidenceROPhotobook } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.project.portal.va.gov/paopwa/1510-002/ { data dvagov.sharepoint.com/sites/OITEPMOEPMDESInfraVCSPOS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/suicideprevention/ { data dvagov.sharepoint.com/sites/VHASuicidePrevention } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/fss%20data%20center%20support%20division/ { data dvagov.sharepoint.com/sites/OITESODCSD } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/io/products/oit/scw/ { data dvagov.sharepoint.com/sites/OITEPMOSCW/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vfistrategy/ { data dvagov.sharepoint.com/sites/VBAVFIstrategy } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/earea/ { data dvagov.sharepoint.com/sites/VBAEasternAREA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/medicalinformatics/ { data dvagov.sharepoint.com/sites/VHAMedicalInformatics } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/communities/tw/ { data dvagov.sharepoint.com/sites/OITEPMOTW/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.project.portal.va.gov/paopwa/cybersec2/ { data dvagov.sharepoint.com/sites/OITEPMOEPMDESInfraC2Team/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vbaslcdirector/ { data dvagov.sharepoint.com/sites/VBASLCDirector } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/communities/softtesting_sect508/ { data dvagov.sharepoint.com/sites/OITEPMOSoftwareTesting508/ } }
+
+
+
+###################################
+#  MIGRATION 51 and 52 11/18/2019 09:40:51
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/ro319/ { data dvagov.sharepoint.com/sites/VBARO319 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/mccf/ { data dvagov.sharepoint.com/sites/OITMCCF } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/leasereviews/ { data dvagov.sharepoint.com/sites/vacoleasereviews } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/communities/osctm/trm/ { data dvagov.sharepoint.com/sites/OITEPMOTRM/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ecs/css/ { data dvagov.sharepoint.com/sites/OITEPMOECSOCSS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ecs/ecso/ { data dvagov.sharepoint.com/sites/OITEPMOECSOVATeam/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/infosecurity/projects/ecstp/ { data dvagov.sharepoint.com/sites/OITEPMOCSA/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ecs/aim/ { data dvagov.sharepoint.com/sites/OITEPMOECSOAIMS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/hds/ { data dvagov.sharepoint.com/sites/VHAHDS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ecs/cas/ { data dvagov.sharepoint.com/sites/OITEPMOECSOCAS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/privacyhub/ { data dvagov.sharepoint.com/sites/OITPrivacyHub } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/communities/osctm/onevatrm/ { data dvagov.sharepoint.com/sites/OITEPMOOneVATRM/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/ophsr/ { data dvagov.sharepoint.com/sites/VHAOPHSR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/cpt_community/ { data dvagov.sharepoint.com/sites/VHACPTCommunity } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ospm/ { data dvagov.sharepoint.com/sites/VHAOSPM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/veamsteam/ { data dvagov.sharepoint.com/sites/OITVEAMSTeam } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/rrtf/ { data dvagov.sharepoint.com/sites/OITRRTF } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/eccm/ { data dvagov.sharepoint.com/sites/VHAECCM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/r5/ { data dvagov.sharepoint.com/sites/OITR5 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ecs/coms/ { data dvagov.sharepoint.com/sites/OITEPMOECSOCOMS/ } }
+
+###################################
+#  MIGRATION 57 and 58 01/13/2020 09:14:36
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/tleadershipcops/ { data dvagov.sharepoint.com/sites/VHATLeadershipCoPs } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/wriisc/ { data dvagov.sharepoint.com/sites/VHAWRIISC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/analytics/ { data dvagov.sharepoint.com/sites/VBAAnalytics } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/vhaknow/ { data dvagov.sharepoint.com/sites/VHAKnow } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/amo/ { data dvagov.sharepoint.com/sites/OITAMO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/vacorp/ { data dvagov.sharepoint.com/sites/VBAVACORP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/womenshealth/ { data dvagov.sharepoint.com/sites/VHAWomensHealth } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/pho-345/ { data dvagov.sharepoint.com/sites/VBAPHO345 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/oalctracker/ { data dvagov.sharepoint.com/sites/OITOALCTracker } }
+
+
+OUTPUT OF tmsh modify commands
+**************************************
+###################################
+#  MIGRATION 59 and 60 01/27/2020 10:25:57
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/hartfordro/ { data dvagov.sharepoint.com/sites/VBAHartfordRO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/nutrition/ { data dvagov.sharepoint.com/sites/VHANutrition } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/edit/ { data dvagov.sharepoint.com/sites/OITEDIT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/npseteamshare/ { data dvagov.sharepoint.com/sites/VHAnpseteamshare } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/rms/ { data dvagov.sharepoint.com/sites/OITRMS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/supplychainguioverlay/ { data dvagov.sharepoint.com/sites/VHASupplyChainGUIOverlay } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/aus-281/ { data dvagov.sharepoint.com/sites/VBAAUS281 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/vamod/ { data dvagov.sharepoint.com/sites/VACOVAMod } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/508/ { data dvagov.sharepoint.com/sites/OIT508 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/pio/ { data dvagov.sharepoint.com/sites/VACOOBO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/cisark/ { data dvagov.sharepoint.com/sites/VHACISARK } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/haiiss_training_archives/ { data dvagov.sharepoint.com/sites/VHAHAIISSTrainingArchives } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/oithr/ { data dvagov.sharepoint.com/sites/OITHR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbaleadershipcampaign/ { data dvagov.sharepoint.com/sites/VBAleadershipcampaign } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/wsldp/ { data dvagov.sharepoint.com/sites/VBAWSLDP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/washingtondc/ { data dvagov.sharepoint.com/sites/VHAWashingtondc } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vasug/ { data dvagov.sharepoint.com/sites/OITVASUG } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/prosthetics/ { data dvagov.sharepoint.com/sites/VHAProsthetics } }
+
+
+###################################
+#  MIGRATION 61 02/10/2020 11:04:07
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/ophsr_new/ { data dvagov.sharepoint.com/sites/VHAnewOPHSR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ehrmactiontracker/ { data dvagov.sharepoint.com/sites/OITEHRMActionTracker } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/pe/ { data dvagov.sharepoint.com/sites/VACOPE } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.project.portal.va.gov/paopwa/1607-008/ { data dvagov.sharepoint.com/sites/OITEPMOMVPChampion/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/act_community/ { data dvagov.sharepoint.com/sites/VHAACTCommunity } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/demps/ { data dvagov.sharepoint.com/sites/VHADEMPS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/ofoplaybooks/ { data dvagov.sharepoint.com/sites/VBAOFOPlaybooks } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vhacancerregistrars/ { data dvagov.sharepoint.com/sites/VHACancerRegistrars } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/pro-304mgt/ { data dvagov.sharepoint.com/sites/VBAPRO304MGT } }
+
+#tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.project.portal.va.gov/paopwa/1307-002/ { data dvagov.sharepoint.com/sites/OITEPMOEPMDESInfraEWSR/ } }
+
+
+###################################
+#  MIGRATION 62 and 63 02/24/2020 09:26:13
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ndcol/ { data dvagov.sharepoint.com/sites/OITNDCOL } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbafinance/ { data dvagov.sharepoint.com/sites/VBAFINANCE } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/support/benefits_products/nca/ { data dvagov.sharepoint.com/sites/OITEPMOMBS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/wacoiso/ { data dvagov.sharepoint.com/sites/vbawacoiso } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/myhealth/ { data dvagov.sharepoint.com/sites/OITmyhealth } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/support/bdn_products/team3/ { data dvagov.sharepoint.com/sites/OITEPMOBDNOLTP/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/basqualitytraining/ { data dvagov.sharepoint.com/sites/VBABASqualitytraining } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/dental/ { data dvagov.sharepoint.com/sites/VHAVACODental } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/qmedoit/ { data dvagov.sharepoint.com/sites/QMEDOIT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/ebusmgt/ { data dvagov.sharepoint.com/sites/vhaebusmgt } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/communities/office_of_integration/wichitaproject/calendering/ { data dvagov.sharepoint.com/sites/OITEPMOPOLARISTeam/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/pssg/ { data dvagov.sharepoint.com/sites/vacopssg } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/rpo/ { data dvagov.sharepoint.com/sites/VBARPO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/communities/pm_competency/ { data dvagov.sharepoint.com/sites/OITEPMOMondayPMCall/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/vha_vein/ { data dvagov.sharepoint.com/sites/VHAVEIN } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/range/ { data dvagov.sharepoint.com/sites/VHARange } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/web_solutions/ { data dvagov.sharepoint.com/sites/OITWebSolutionsSupport } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/pittsburgh/ { data dvagov.sharepoint.com/sites/VBAPittsburgh } }
+
+###################################
+#  MIGRATION 64 03/02/2020 10:17:11
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/cmwa/ { data dvagov.sharepoint.com/sites/OITCMWA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/support/benefits_support_management/ { data dvagov.sharepoint.com/sites/OITEPMOmanagement/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/hawaii/ { data dvagov.sharepoint.com/sites/VHAHawaii } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/csss/ { data dvagov.sharepoint.com/sites/OITCSSS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/rcsregion3a/ { data dvagov.sharepoint.com/sites/VHARCSRegion3A } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/prevention/ { data dvagov.sharepoint.com/sites/VHAPrevention } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/cpst/ { data dvagov.sharepoint.com/sites/OITCPST } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/sea-346/ { data dvagov.sharepoint.com/sites/VBASEA346 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/basqualitytraining/ { data dvagov.sharepoint.com/sites/VBABASqualitytraining } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.nca.va.gov/sites/ncahistory/ { data dvagov.sharepoint.com/sites/NCAHistory } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/mst/ { data dvagov.sharepoint.com/sites/VHAMST } }
+
+
+###################################
+#  MIGRATION 65 03/16/2020 09:21:21
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/pcsclipro/ { data dvagov.sharepoint.com/sites/VHApcsclipro } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/communitycare/ { data dvagov.sharepoint.com/sites/OITEPMOProviderPaymentsEDI/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/finmanguides/ { data dvagov.sharepoint.com/sites/VHAfinmanguides } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/41c/ { data dvagov.sharepoint.com/sites/NCA41C } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ais/ { data dvagov.sharepoint.com/sites/VHAAIS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/etr/ { data dvagov.sharepoint.com/sites/VACOETR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/lgbeducation/ { data dvagov.sharepoint.com/sites/VHALGBEducation } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/pathways/ { data dvagov.sharepoint.com/sites/VACOPathways } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/paidaccesssecurity/ { data dvagov.sharepoint.com/sites/OITPAIDAccessSecurity } }
+
+###################################
+#  MIGRATION 66 03/30/2020 10:03:35
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ediscovery/ { data dvagov.sharepoint.com/sites/OITEDISCOVERY } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbacomms/ { data dvagov.sharepoint.com/sites/VBAComms } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/mdws/ { data dvagov.sharepoint.com/sites/OITMDWS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/qpr/ { data dvagov.sharepoint.com/sites/OITQPR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/strategicsourcing/ { data dvagov.sharepoint.com/sites/OITStrategicSourcing } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/benefitsportfoliogovernance/ { data dvagov.sharepoint.com/sites/VBABenefitsGovernance } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/manualrewrite/ { data dvagov.sharepoint.com/sites/VBA21CTEST/M21/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/cgp/ { data dvagov.sharepoint.com/sites/VHACGP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/hcrc/ { data dvagov.sharepoint.com/sites/VHAHCRC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/slcfhteams/ { data dvagov.sharepoint.com/sites/VBASLCFHTeams } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/support/benefits_products/education/ { data dvagov.sharepoint.com/sites/OITEPMOEVRPLPARTNERS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/fmac/ { data dvagov.sharepoint.com/sites/VACOFMAC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/sao/ { data dvagov.sharepoint.com/sites/VBASAO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/asd/trms/ { data dvagov.sharepoint.com/sites/OITEPMOTRMS/ } }
+
+
+###################################
+#  MIGRATION 68 04/06/2020 09:41:31
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/office_of_financial_policy/ { data dvagov.sharepoint.com/sites/VHAOfficeOfFinancialPolicy } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ormanager/ { data dvagov.sharepoint.com/sites/VHAORManager } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/io/products/vafs/fms/ { data dvagov.sharepoint.com/sites/OITEPMOFMS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.project.portal.va.gov/paopwa/2017-456/ { data dvagov.sharepoint.com/sites/OITEPMOEPMDESDVP/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/wh-pbrn/ { data dvagov.sharepoint.com/sites/VHAWHPBRN } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.nca.va.gov/sites/dusofandp/ { data dvagov.sharepoint.com/sites/NCADUSOFandP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/wss/ { data dvagov.sharepoint.com/sites/VHAWSS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/vhaacbm/ { data dvagov.sharepoint.com/sites/VHAACBM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/pya/ { data dvagov.sharepoint.com/sites/VACOPYA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/telework/ { data dvagov.sharepoint.com/sites/VHATelework } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbacos/ { data dvagov.sharepoint.com/sites/VBACOS1 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ospa/ { data dvagov.sharepoint.com/sites/OITQPR/DMAD } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/oitcomm/ { data dvagov.sharepoint.com/sites/OITCOMM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/oess/ { data dvagov.sharepoint.com/sites/VACOOESS } }
+
+
+OUTPUT OF tmsh modify commands
+**************************************
+
+###################################
+#  MIGRATION 69 04/20/2020 09:24:04
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/vva/ { data dvagov.sharepoint.com/sites/OITVVA } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/support/bdn_products/team2/ { data dvagov.sharepoint.com/sites/OITEPMOBDNBatch/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ecs/archives/ { data dvagov.sharepoint.com/sites/OITEPMOECSOArchives/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/csrt/ { data dvagov.sharepoint.com/sites/VACOCSRT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/mediarepository/ { data dvagov.sharepoint.com/sites/VBAMediaRepository } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/oaemtraining/ { data dvagov.sharepoint.com/sites/VACOOAEMTraining } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/dco-pitc/ { data dvagov.sharepoint.com/sites/OITDCOPITC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/digestive/ { data dvagov.sharepoint.com/sites/VHADigestive } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/2013scip/ { data dvagov.sharepoint.com/sites/VACO2013SCIP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/asd/opendata/ { data dvagov.sharepoint.com/sites/OITEPMOOpenData/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/det-329/ { data dvagov.sharepoint.com/sites/VBADet329 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ohshg/ { data dvagov.sharepoint.com/sites/VHAohshg } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/newark/ { data dvagov.sharepoint.com/sites/VBANewark } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ptsd_mentoring/ { data dvagov.sharepoint.com/sites/VHAPTSDMentoring } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ecs/application/ { data dvagov.sharepoint.com/sites/OITEPMOECSOApplication/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/anc-463/ { data dvagov.sharepoint.com/sites/VBAANC463 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/ics/ { data dvagov.sharepoint.com/sites/VACOOMOBO/FROS } }
+
+###################################
+#  MIGRATION 70 04/27/2020 10:44:30
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/fleetmanagement/ { data dvagov.sharepoint.com/sites/VACOFleetmanagement } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/asd/aerb/ { data dvagov.sharepoint.com/sites/OITEPMOSTAT/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/centralizedtraining/ { data dvagov.sharepoint.com/sites/VBACentralizedTraining } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/hac/ { data dvagov.sharepoint.com/sites/OITHAC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/t-21%20integrated%20curriculum/ { data dvagov.sharepoint.com/sites/VHAT21IntegratedCurriculum } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/officeofbudget/ { data dvagov.sharepoint.com/sites/VACO041budget/CommunicationOfficeOfBudget } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/pcsclinical/ { data dvagov.sharepoint.com/sites/VHAPCSclinical } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/sitevisits/ { data dvagov.sharepoint.com/sites/VACOsitevists } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/21pfsservice/ { data dvagov.sharepoint.com/sites/VBA21PFSService } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vetcentered/ { data dvagov.sharepoint.com/sites/VHAVetCentered } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/asd/tsa/ { data dvagov.sharepoint.com/sites/OITEPMODMDTSAS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/hin-282-ais/ { data dvagov.sharepoint.com/sites/VBAHIN282AIS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/herc/ { data dvagov.sharepoint.com/sites/OITHERC } }
+
+
+###################################
+#  MIGRATION 71 05/04/2020 09:31:26
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/albsps/ { data dvagov.sharepoint.com/sites/VBAALBSPS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/m28rewrite/ { data dvagov.sharepoint.com/sites/VBAM28rewrite } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/gmac/ { data dvagov.sharepoint.com/sites/VHAGMAC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vants/ { data dvagov.sharepoint.com/sites/OITVANTS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/hitc/ { data dvagov.sharepoint.com/sites/OITHITC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vhaohi/ { data dvagov.sharepoint.com/sites/VHAOHI } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/sptnsc/ { data dvagov.sharepoint.com/sites/VBASPTNSC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/eo/ { data dvagov.sharepoint.com/sites/OITEO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/bb/ { data dvagov.sharepoint.com/sites/OITBB } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/philadelphiaro/ { data dvagov.sharepoint.com/sites/VBAPhiladelphiaRO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/ocs/ { data dvagov.sharepoint.com/sites/OITOCS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbaoefoif/ { data dvagov.sharepoint.com/sites/vbaoefoif } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/dqi_usaspending/ { data dvagov.sharepoint.com/sites/VBADQIUSAPending } }
+
+
+###################################
+#  MIGRATION 72 05/11/2020 07:07:30
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/sustainablebuildings/ { data dvagov.sharepoint.com/sites/VACOSustainablebuildings } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vbawomenveteranscoordinators/ { data dvagov.sharepoint.com/sites/VBAWomenVeteransCoordinators } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/facilitatortraining/ { data dvagov.sharepoint.com/sites/VHAfacilitatortraining } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/poung/ { data dvagov.sharepoint.com/sites/VHAPOUNG } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/vppmo/ { data dvagov.sharepoint.com/sites/OITvppmo } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/communities/app_dev/dmc/devresearch/ { data dvagov.sharepoint.com/sites/OITEPMOVODevResearch/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/hineseng/ { data dvagov.sharepoint.com/sites/VBAHinesENG } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/vbafmc/ { data dvagov.sharepoint.com/sites/VBAFMC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/mqas/ { data dvagov.sharepoint.com/sites/VACOOMOBO/PIO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/vainnovatorsnetwork/ { data dvagov.sharepoint.com/sites/VHAVAINNOVATORSNETWORK } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/patientadvocacy/ { data dvagov.sharepoint.com/sites/VACOPatientAdvocacy } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/oaa/ { data dvagov.sharepoint.com/sites/VHAoaa } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/ortaccess/ { data dvagov.sharepoint.com/sites/VBAOrtaccess } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/icare/ { data dvagov.sharepoint.com/sites/VACOICARE } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/hudvash/ { data dvagov.sharepoint.com/sites/VHAHudvash } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/telerad/ { data dvagov.sharepoint.com/sites/Vhatelerad } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/vbaoutreachpublication/ { data dvagov.sharepoint.com/sites/VBAOutreachpublication } }
+
+
+###################################
+#  MIGRATION 75 06/08/2020 09:33:52
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vapmcoe/ { data dvagov.sharepoint.com/sites/VACOVAPMCOE } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/onevaea/entarch/ { data dvagov.sharepoint.com/sites/OITEPMOVAEAentarch/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/cpts/ { data dvagov.sharepoint.com/sites/VACOCPTS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/cbo_pci/ { data dvagov.sharepoint.com/sites/VHACBOPCI } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/r5-rms/ { data dvagov.sharepoint.com/sites/VBAR5RMS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/hi2/ { data dvagov.sharepoint.com/sites/VHAHI2 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/onevaea/plm/ { data dvagov.sharepoint.com/sites/OITEPMOVAEAplm/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/vasync/ { data dvagov.sharepoint.com/sites/VHAVASync } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.oed.portal.va.gov/administration/executive_support/ { data dvagov.sharepoint.com/sites/OITEPMOExecSupport/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/onevaea/workingdocuments/ { data dvagov.sharepoint.com/sites/OITEPMOVAEAworkingdocuments/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/onevaea/ehrm/ { data dvagov.sharepoint.com/sites/OITEPMOVAEAeHRM/ } }
+
+
+###################################
+#  MIGRATION 75 06/15/2020 09:20:31
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/onevaea/sp/ { data dvagov.sharepoint.com/sites/OITEPMOVAEASP/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/asd/techstrat/ { data dvagov.sharepoint.com/sites/OITEPMOTechStrat/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/coi/ { data dvagov.sharepoint.com/sites/VHACOI } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/rdm/ { data dvagov.sharepoint.com/sites/VHARDM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/ntrt/ { data dvagov.sharepoint.com/sites/VHANTRT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/saltlakeit/ { data dvagov.sharepoint.com/sites/OITSaltlakeIT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/wsvbms/ { data dvagov.sharepoint.com/sites/VBAWSVBMS } }
+
+
+###################################
+#  MIGRATION 77 06/29/2020 10:00:44
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/splncior05/vba/togusro/ { data dvagov.sharepoint.com/sites/VBATOG/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/sam/ { data dvagov.sharepoint.com/sites/OITSAM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ncrcpublic/ { data dvagov.sharepoint.com/sites/vhancrcpublic } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/amo/ { data dvagov.sharepoint.com/sites/OITAMO } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/baltimoreqrt/ { data dvagov.sharepoint.com/sites/VBABaltimoreQRT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/onevaea/saet/ { data dvagov.sharepoint.com/sites/OITEPMOVAEASAET/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vbaanchorage/ { data dvagov.sharepoint.com/sites/VBAAnchorage } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/wpa/ { data dvagov.sharepoint.com/sites/VACOWPA } }
+
+###################################
+#  MIGRATION 77 & 78 07/13/2020 09:21:51
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/epay/ { data dvagov.sharepoint.com/sites/vacoepay } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/icd-10%20conversion/ { data dvagov.sharepoint.com/sites/VHAICD10Conversion } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/pmdb/ { data dvagov.sharepoint.com/sites/VHAPMDB } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/onevaea/veams/ { data dvagov.sharepoint.com/sites/OITEPMOVAEAVEAMS/ } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/visr/ { data dvagov.sharepoint.com/sites/OITVISR } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/dmcslc/ { data dvagov.sharepoint.com/sites/VBADMCSLC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/virec/ { data dvagov.sharepoint.com/sites/VBAVIREC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vanra/ { data dvagov.sharepoint.com/sites/VHAVanra } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/hrcbal/ { data dvagov.sharepoint.com/sites/VBAHRCBAL } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/ednursing/ { data dvagov.sharepoint.com/sites/VHAEDNursing } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/vbahrportal/ { data dvagov.sharepoint.com/sites/VBAHRPortal } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/privacycommunication/ { data dvagov.sharepoint.com/sites/OITPrivacyCommunication } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal.va.gov/sites/pcmhihub/pcmhi/ { data dvagov.sharepoint.com/sites/VHAfocus-areas/primary-care/primary-care-mental-health-integration } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/hes-his-admins/ { data dvagov.sharepoint.com/sites/VHAHESHISADMINS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/dmon/ { data dvagov.sharepoint.com/sites/VBADMON } }
+
+
+###################################
+#  MIGRATION 83 08/24/2020 10:18:55
+#
+#  tmsh modify /ltm data-group internal datagroup_uri_list_lc records add {  { data  } }
+###################################
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/philadelphia/ { data dvagov.sharepoint.com/sites/VBAphiladelphia } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.nca.va.gov/sites/strategiccommcouncil/ { data dvagov.sharepoint.com/sites/NCAStrategicCommCouncil } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/2020scip/ { data dvagov.sharepoint.com/sites/VACO2020scip } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/wit/ { data dvagov.sharepoint.com/sites/VBAWIT } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vha.va.gov/sites/shreveport/ { data dvagov.sharepoint.com/sites/VHAShreveport } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/osm/ { data dvagov.sharepoint.com/sites/VACOOSM } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vaco.va.gov/sites/172/ { data dvagov.sharepoint.com/sites/VACO172 } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ccotps/ { data dvagov.sharepoint.com/sites/VACOCCOTPS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.oit.va.gov/sites/bwvie/ { data dvagov.sharepoint.com/sites/OITBWVIE } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.vashare.vba.va.gov/sites/jac-393hrc/ { data dvagov.sharepoint.com/sites/VBAJAC393HRC } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/teledermatology/ { data dvagov.sharepoint.com/sites/VHATeledermatology } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vbacrisp/ { data dvagov.sharepoint.com/sites/VBACRISP } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.portal2.va.gov/sites/vbaws/ { data dvagov.sharepoint.com/sites/VBAWS } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/ietechassist/ { data dvagov.sharepoint.com/sites/VHAietechassist } }
+tmsh modify /ltm data-group internal datagroup_uri_list_lc records add { vaww.infoshare.va.gov/sites/testvrm/ { data dvagov.sharepoint.com/sites/VBAtestvrm } }
+
+
+OUTPUT OF tmsh modify commands
+**************************************
+
+
+#######################################
+#  Current DataGroup after wave 83
+#
+#  tmsh list /ltm data-group internal datagroup_uri_list_lc
+#######################################
+
+ltm data-group internal datagroup_uri_list_lc {
+    records {
+        conversion/ {
+            data dvagov.sharepoint.com/sites/VHAICD10Conversion
+        }
+        vaww.infoshare.va.gov/epg/ {
+            data dvagov.sharepoint.com/sites/VHAEPG
+        }
+        vaww.infoshare.va.gov/sites/20p {
+            data dvagov.sharepoint.com/sites/vba20p
+        }
+        vaww.infoshare.va.gov/sites/21pfsservice/ {
+            data dvagov.sharepoint.com/sites/VBA21PFSService
+        }
+        vaww.infoshare.va.gov/sites/41c/ {
+            data dvagov.sharepoint.com/sites/NCA41C
+        }
+        vaww.infoshare.va.gov/sites/508/ {
+            data dvagov.sharepoint.com/sites/OIT508
+        }
+        vaww.infoshare.va.gov/sites/ais/ {
+            data dvagov.sharepoint.com/sites/VHAAIS
+        }
+        vaww.infoshare.va.gov/sites/analytics/ {
+            data dvagov.sharepoint.com/sites/VBAAnalytics
+        }
+        vaww.infoshare.va.gov/sites/ark {
+            data dvagov.sharepoint.com/sites/vhaark
+        }
+        vaww.infoshare.va.gov/sites/atlantaro/ {
+            data dvagov.sharepoint.com/sites/VBAAtlantaRO
+        }
+        vaww.infoshare.va.gov/sites/benefitsportfoliogovernance/ {
+            data dvagov.sharepoint.com/sites/VBABenefitsGovernance
+        }
+        vaww.infoshare.va.gov/sites/cab {
+            data dvagov.sharepoint.com/sites/cab
+        }
+        vaww.infoshare.va.gov/sites/carecoordination {
+            data dvagov.sharepoint.com/sites/vhacarecoordination
+        }
+        vaww.infoshare.va.gov/sites/ccotps/ {
+            data dvagov.sharepoint.com/sites/VACOCCOTPS
+        }
+        vaww.infoshare.va.gov/sites/centralizedtraining/ {
+            data dvagov.sharepoint.com/sites/VBACentralizedTraining
+        }
+        vaww.infoshare.va.gov/sites/certification/ {
+            data dvagov.sharepoint.com/sites/VBACertification
+        }
+        vaww.infoshare.va.gov/sites/clinicalpharmacy {
+            data dvagov.sharepoint.com/sites/vhaclinicalpharmacy
+        }
+        vaww.infoshare.va.gov/sites/cmsws/ {
+            data dvagov.sharepoint.com/sites/VHACMSWS
+        }
+        vaww.infoshare.va.gov/sites/cpts/ {
+            data dvagov.sharepoint.com/sites/VACOCPTS
+        }
+        vaww.infoshare.va.gov/sites/dbq/ {
+            data dvagov.sharepoint.com/sites/VBADBQ
+        }
+        vaww.infoshare.va.gov/sites/dcpobackup {
+            data dvagov.sharepoint.com/sites/vhadcpobackup
+        }
+        vaww.infoshare.va.gov/sites/demps/ {
+            data dvagov.sharepoint.com/sites/VHADEMPS
+        }
+        vaww.infoshare.va.gov/sites/dental/ {
+            data dvagov.sharepoint.com/sites/VHAVACODental
+        }
+        vaww.infoshare.va.gov/sites/diagnosticservices/ {
+            data dvagov.sharepoint.com/sites/VHADiagnosticservices
+        }
+        vaww.infoshare.va.gov/sites/digestive/ {
+            data dvagov.sharepoint.com/sites/VHADigestive
+        }
+        vaww.infoshare.va.gov/sites/dma/ {
+            data dvagov.sharepoint.com/sites/VHADMA
+        }
+        vaww.infoshare.va.gov/sites/dssproject {
+            data dvagov.sharepoint.com/sites/dssproject
+        }
+        vaww.infoshare.va.gov/sites/edt/ {
+            data dvagov.sharepoint.com/sites/VBAEDT
+        }
+        vaww.infoshare.va.gov/sites/energytraining/ {
+            data dvagov.sharepoint.com/sites/VHAenergytraining
+        }
+        vaww.infoshare.va.gov/sites/epay/ {
+            data dvagov.sharepoint.com/sites/vacoepay
+        }
+        vaww.infoshare.va.gov/sites/esss {
+            data dvagov.sharepoint.com/sites/esss
+        }
+        vaww.infoshare.va.gov/sites/evaluations {
+            data dvagov.sharepoint.com/sites/evaluations
+        }
+        vaww.infoshare.va.gov/sites/flite-security/ {
+            data dvagov.sharepoint.com/sites/OITFLITESecurity
+        }
+        vaww.infoshare.va.gov/sites/geriatrics/ {
+            data dvagov.sharepoint.com/sites/VHAGeriatrics
+        }
+        vaww.infoshare.va.gov/sites/hartfordro/ {
+            data dvagov.sharepoint.com/sites/VBAHartfordRO
+        }
+        vaww.infoshare.va.gov/sites/hawaii/ {
+            data dvagov.sharepoint.com/sites/VHAHawaii
+        }
+        vaww.infoshare.va.gov/sites/hcrc/ {
+            data dvagov.sharepoint.com/sites/VHAHCRC
+        }
+        vaww.infoshare.va.gov/sites/hi2/ {
+            data dvagov.sharepoint.com/sites/VHAHI2
+        }
+        vaww.infoshare.va.gov/sites/homelessincarceratedveterans/ {
+            data dvagov.sharepoint.com/sites/VACOHomelessIncarcerateVets
+        }
+        vaww.infoshare.va.gov/sites/hsrd/ {
+            data dvagov.sharepoint.com/sites/VHAHSRD
+        }
+        vaww.infoshare.va.gov/sites/ietechassist/ {
+            data dvagov.sharepoint.com/sites/VHAietechassist
+        }
+        vaww.infoshare.va.gov/sites/instructionaldesignservices {
+            data dvagov.sharepoint.com/sites/instructionaldesignservices
+        }
+        vaww.infoshare.va.gov/sites/integratedethics/ {
+            data dvagov.sharepoint.com/sites/VHAIntegratedEthics
+        }
+        vaww.infoshare.va.gov/sites/iris/ {
+            data dvagov.sharepoint.com/sites/OITIRIS
+        }
+        vaww.infoshare.va.gov/sites/itsdadmin/ {
+            data dvagov.sharepoint.com/sites/VHAITSDadmin
+        }
+        vaww.infoshare.va.gov/sites/ittrainingacademy/itrm/itcrm/employeeengagement {
+            data dvagov.sharepoint.com/sites/oitemployeeengagement
+        }
+        vaww.infoshare.va.gov/sites/leadershipbaypines {
+            data dvagov.sharepoint.com/sites/vbaleadershipbaypines
+        }
+        vaww.infoshare.va.gov/sites/lgbeducation/ {
+            data dvagov.sharepoint.com/sites/VHALGBEducation
+        }
+        vaww.infoshare.va.gov/sites/m28rewrite/ {
+            data dvagov.sharepoint.com/sites/VBAM28rewrite
+        }
+        vaww.infoshare.va.gov/sites/medicalinformatics/ {
+            data dvagov.sharepoint.com/sites/VHAMedicalInformatics
+        }
+        vaww.infoshare.va.gov/sites/medrecon/ {
+            data dvagov.sharepoint.com/sites/VHAMedRecon
+        }
+        vaww.infoshare.va.gov/sites/mhs {
+            data dvagov.sharepoint.com/sites/vhamhs
+        }
+        vaww.infoshare.va.gov/sites/mhvproductdocs {
+            data dvagov.sharepoint.com/sites/mhvproductdocs
+        }
+        vaww.infoshare.va.gov/sites/mhvsocialmedia {
+            data dvagov.sharepoint.com/sites/mhvsocialmedia
+        }
+        vaww.infoshare.va.gov/sites/mps/ {
+            data dvagov.sharepoint.com/sites/VACOMPS
+        }
+        vaww.infoshare.va.gov/sites/mqas/ {
+            data dvagov.sharepoint.com/sites/VACOOMOBO/PIO
+        }
+        vaww.infoshare.va.gov/sites/mqas/fwametrics/ {
+            data dvagov.sharepoint.com/sites/VACOOMOBO/PIO/FWAMetrics
+        }
+        vaww.infoshare.va.gov/sites/mskforum/ {
+            data dvagov.sharepoint.com/sites/VHAmskforum
+        }
+        vaww.infoshare.va.gov/sites/myhealth/ {
+            data dvagov.sharepoint.com/sites/OITmyhealth
+        }
+        vaww.infoshare.va.gov/sites/nagecontract/ {
+            data dvagov.sharepoint.com/sites/VACONAGEcontract
+        }
+        vaww.infoshare.va.gov/sites/nationalplanningtraining {
+            data dvagov.sharepoint.com/sites/vhanationalplanningtraining
+        }
+        vaww.infoshare.va.gov/sites/ncaconferences {
+            data dvagov.sharepoint.com/sites/ncaconferences
+        }
+        vaww.infoshare.va.gov/sites/ncctelephonequality/ {
+            data dvagov.sharepoint.com/sites/VBANCCTelephoneQuality
+        }
+        vaww.infoshare.va.gov/sites/nffe.rif {
+            data dvagov.sharepoint.com/sites/nffe.rif
+        }
+        vaww.infoshare.va.gov/sites/nhpp/ {
+            data dvagov.sharepoint.com/sites/VHANHPP
+        }
+        vaww.infoshare.va.gov/sites/nic/ {
+            data dvagov.sharepoint.com/sites/VBANIC
+        }
+        vaww.infoshare.va.gov/sites/nonvacare {
+            data dvagov.sharepoint.com/sites/vhanonvacare
+        }
+        vaww.infoshare.va.gov/sites/npseteamshare/ {
+            data dvagov.sharepoint.com/sites/VHAnpseteamshare
+        }
+        vaww.infoshare.va.gov/sites/nutrition/ {
+            data dvagov.sharepoint.com/sites/VHANutrition
+        }
+        vaww.infoshare.va.gov/sites/oeo {
+            data dvagov.sharepoint.com/sites/vbaoeo
+        }
+        vaww.infoshare.va.gov/sites/oitcommunications {
+            data dvagov.sharepoint.com/sites/oitcommunications
+        }
+        vaww.infoshare.va.gov/sites/opcc/ {
+            data dvagov.sharepoint.com/sites/VHAOPCC
+        }
+        vaww.infoshare.va.gov/sites/operationsanalysis/ {
+            data dvagov.sharepoint.com/sites/VBAOperationsAnalysis
+        }
+        vaww.infoshare.va.gov/sites/ormanager/ {
+            data dvagov.sharepoint.com/sites/VHAORManager
+        }
+        vaww.infoshare.va.gov/sites/osm/ {
+            data dvagov.sharepoint.com/sites/VACOOSM
+        }
+        vaww.infoshare.va.gov/sites/ospm/ {
+            data dvagov.sharepoint.com/sites/VHAOSPM
+        }
+        vaww.infoshare.va.gov/sites/outreachcoordination {
+            data dvagov.sharepoint.com/sites/outreachcoordination
+        }
+        vaww.infoshare.va.gov/sites/paidaccesssecurity/ {
+            data dvagov.sharepoint.com/sites/OITPAIDAccessSecurity
+        }
+        vaww.infoshare.va.gov/sites/paloalto/ {
+            data dvagov.sharepoint.com/sites/VHApaloalto
+        }
+        vaww.infoshare.va.gov/sites/pcsclipro/ {
+            data dvagov.sharepoint.com/sites/VHApcsclipro
+        }
+        vaww.infoshare.va.gov/sites/pcscoe/ {
+            data dvagov.sharepoint.com/sites/VHAPCSCOE
+        }
+        vaww.infoshare.va.gov/sites/pcsdiscuss {
+            data dvagov.sharepoint.com/sites/vhapcsdiscuss
+        }
+        vaww.infoshare.va.gov/sites/pe/ {
+            data dvagov.sharepoint.com/sites/VACOPE
+        }
+        vaww.infoshare.va.gov/sites/philadelphiaro/ {
+            data dvagov.sharepoint.com/sites/VBAPhiladelphiaRO
+        }
+        vaww.infoshare.va.gov/sites/phillynetwork/ {
+            data dvagov.sharepoint.com/sites/OITPhillyNetwork
+        }
+        vaww.infoshare.va.gov/sites/pirtracker/ {
+            data dvagov.sharepoint.com/sites/VBAPIRtracker
+        }
+        vaww.infoshare.va.gov/sites/portlandro {
+            data dvagov.sharepoint.com/sites/vbaportlandro
+        }
+        vaww.infoshare.va.gov/sites/prevention/ {
+            data dvagov.sharepoint.com/sites/VHAPrevention
+        }
+        vaww.infoshare.va.gov/sites/privacycommunication/ {
+            data dvagov.sharepoint.com/sites/OITPrivacyCommunication
+        }
+        vaww.infoshare.va.gov/sites/programmanagementcouncil {
+            data dvagov.sharepoint.com/sites/oitprogrammanagementcouncil
+        }
+        vaww.infoshare.va.gov/sites/prosthetics/ {
+            data dvagov.sharepoint.com/sites/VHAProsthetics
+        }
+        vaww.infoshare.va.gov/sites/pssg/ {
+            data dvagov.sharepoint.com/sites/vacopssg
+        }
+        vaww.infoshare.va.gov/sites/psychologytrainingcouncil {
+            data dvagov.sharepoint.com/sites/psychologytrainingcouncil
+        }
+        vaww.infoshare.va.gov/sites/queri/ {
+            data dvagov.sharepoint.com/sites/VHAQueri
+        }
+        vaww.infoshare.va.gov/sites/radonc/ {
+            data dvagov.sharepoint.com/sites/VHARadonc
+        }
+        vaww.infoshare.va.gov/sites/range/ {
+            data dvagov.sharepoint.com/sites/VHARange
+        }
+        vaww.infoshare.va.gov/sites/rcsregion3a/ {
+            data dvagov.sharepoint.com/sites/VHARCSRegion3A
+        }
+        vaww.infoshare.va.gov/sites/rdpc {
+            data dvagov.sharepoint.com/sites/oitrdpc
+        }
+        vaww.infoshare.va.gov/sites/respiratorycare {
+            data dvagov.sharepoint.com/sites/vharespiratorycare
+        }
+        vaww.infoshare.va.gov/sites/rpo/ {
+            data dvagov.sharepoint.com/sites/VBARPO
+        }
+        vaww.infoshare.va.gov/sites/saltlakeit/ {
+            data dvagov.sharepoint.com/sites/OITSaltlakeIT
+        }
+        vaww.infoshare.va.gov/sites/sam/ {
+            data dvagov.sharepoint.com/sites/OITSAM
+        }
+        vaww.infoshare.va.gov/sites/sao {
+            data dvagov.sharepoint.com/sites/sao
+        }
+        vaww.infoshare.va.gov/sites/saturdaypay {
+            data dvagov.sharepoint.com/sites/vhasaturdaypay
+        }
+        vaww.infoshare.va.gov/sites/scihubandspokes/ {
+            data dvagov.sharepoint.com/sites/VHAscihubandspokes
+        }
+        vaww.infoshare.va.gov/sites/sitevisits/ {
+            data dvagov.sharepoint.com/sites/VACOsitevists
+        }
+        vaww.infoshare.va.gov/sites/sptnsc/ {
+            data dvagov.sharepoint.com/sites/VBASPTNSC
+        }
+        vaww.infoshare.va.gov/sites/teledermatology/ {
+            data dvagov.sharepoint.com/sites/VHATeledermatology
+        }
+        vaww.infoshare.va.gov/sites/telehelpdesk {
+            data dvagov.sharepoint.com/sites/vhatelehelpdesk
+        }
+        vaww.infoshare.va.gov/sites/telerad/ {
+            data dvagov.sharepoint.com/sites/Vhatelerad
+        }
+        vaww.infoshare.va.gov/sites/telework/ {
+            data dvagov.sharepoint.com/sites/VHATelework
+        }
+        vaww.infoshare.va.gov/sites/testvrm/ {
+            data dvagov.sharepoint.com/sites/VBAtestvrm
+        }
+        vaww.infoshare.va.gov/sites/tleadershipcops/ {
+            data dvagov.sharepoint.com/sites/VHATLeadershipCoPs
+        }
+        vaww.infoshare.va.gov/sites/trainingstrategy/ {
+            data dvagov.sharepoint.com/sites/VHATrainingStrategy
+        }
+        vaww.infoshare.va.gov/sites/vadodhis/ {
+            data dvagov.sharepoint.com/sites/VHAVADoDHIS
+        }
+        vaww.infoshare.va.gov/sites/valu/ {
+            data dvagov.sharepoint.com/sites/VACOVALU
+        }
+        vaww.infoshare.va.gov/sites/vapharmacyinformatics {
+            data dvagov.sharepoint.com/sites/vhavapharmacyinformatics
+        }
+        vaww.infoshare.va.gov/sites/vapolice {
+            data dvagov.sharepoint.com/sites/oitvapolice
+        }
+        vaww.infoshare.va.gov/sites/vasug/ {
+            data dvagov.sharepoint.com/sites/OITVASUG
+        }
+        vaww.infoshare.va.gov/sites/vbacemp/ {
+            data dvagov.sharepoint.com/sites/VBACEMP
+        }
+        vaww.infoshare.va.gov/sites/vbacomms/ {
+            data dvagov.sharepoint.com/sites/VBAComms
+        }
+        vaww.infoshare.va.gov/sites/vbacos/ {
+            data dvagov.sharepoint.com/sites/VBACOS1
+        }
+        vaww.infoshare.va.gov/sites/vbafinance/ {
+            data dvagov.sharepoint.com/sites/VBAFINANCE
+        }
+        vaww.infoshare.va.gov/sites/vbaleadershipcampaign/ {
+            data dvagov.sharepoint.com/sites/VBAleadershipcampaign
+        }
+        vaww.infoshare.va.gov/sites/vbaoefoif/ {
+            data dvagov.sharepoint.com/sites/vbaoefoif
+        }
+        vaww.infoshare.va.gov/sites/vbarmo/ {
+            data dvagov.sharepoint.com/sites/VBARMO
+        }
+        vaww.infoshare.va.gov/sites/vbasafety {
+            data dvagov.sharepoint.com/sites/vbasafety
+        }
+        vaww.infoshare.va.gov/sites/vbasocialmedia {
+            data dvagov.sharepoint.com/sites/VBAsocialmedia
+        }
+        vaww.infoshare.va.gov/sites/vbastat/ {
+            data dvagov.sharepoint.com/sites/VBAStat
+        }
+        vaww.infoshare.va.gov/sites/vbawomenveteranscoordinators/ {
+            data dvagov.sharepoint.com/sites/VBAWomenVeteransCoordinators
+        }
+        vaww.infoshare.va.gov/sites/vchio/ {
+            data dvagov.sharepoint.com/sites/VHAVCHIO
+        }
+        vaww.infoshare.va.gov/sites/vchioartifactdevelopment/ {
+            data dvagov.sharepoint.com/sites/VHAVCHIOArtifactDevelopment
+        }
+        vaww.infoshare.va.gov/sites/vetsuccess/ {
+            data dvagov.sharepoint.com/sites/VBAVetSuccess
+        }
+        vaww.infoshare.va.gov/sites/vfistrategy/ {
+            data dvagov.sharepoint.com/sites/VBAVFIstrategy
+        }
+        vaww.infoshare.va.gov/sites/vhacancerregistrars/ {
+            data dvagov.sharepoint.com/sites/VHACancerRegistrars
+        }
+        vaww.infoshare.va.gov/sites/vhaspt/ {
+            data dvagov.sharepoint.com/sites/VHASPT
+        }
+        vaww.infoshare.va.gov/sites/vistaradiology {
+            data dvagov.sharepoint.com/sites/vistaradiology
+        }
+        vaww.infoshare.va.gov/sites/vppmo/ {
+            data dvagov.sharepoint.com/sites/OITvppmo
+        }
+        vaww.infoshare.va.gov/sites/web101/ {
+            data dvagov.sharepoint.com/sites/VBAweb101
+        }
+        vaww.infoshare.va.gov/sites/web_solutions/ {
+            data dvagov.sharepoint.com/sites/OITWebSolutionsSupport
+        }
+        vaww.infoshare.va.gov/sites/webcom/ {
+            data dvagov.sharepoint.com/sites/VHAWebCom
+        }
+        vaww.infoshare.va.gov/sites/wfpinitiative/ {
+            data dvagov.sharepoint.com/sites/VACOWFPInitiative
+        }
+        vaww.infoshare.va.gov/sites/womenshealth/ {
+            data dvagov.sharepoint.com/sites/VHAWomensHealth
+        }
+        vaww.infoshare.va.gov/sites/wriisc {
+            data dvagov.sharepoint.com/sites/wriisc
+        }
+        vaww.infoshare.va.gov/sites/wsldp/ {
+            data dvagov.sharepoint.com/sites/VBAWSLDP
+        }
+        vaww.infoshare.va.gov/sites/wss/ {
+            data dvagov.sharepoint.com/sites/VHAWSS
+        }
+        vaww.linkhr.portal.va.gov/ {
+            data dvagov.sharepoint.com/sites/VACOLinkHR
+        }
+        vaww.oed.portal.va.gov/administration/budget_execution/ {
+            data dvagov.sharepoint.com/sites/OITEPMOBPE/
+        }
+        vaww.oed.portal.va.gov/administration/executive_support/ {
+            data dvagov.sharepoint.com/sites/OITEPMOExecSupport/
+        }
+        vaww.oed.portal.va.gov/applications/vistaimaging {
+            data dvagov.sharepoint.com/sites/oitepmovistaimaging
+        }
+        vaww.oed.portal.va.gov/communities/app_dev/dmc/devresearch/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVODevResearch/
+        }
+        vaww.oed.portal.va.gov/communities/office_of_integration/wichitaproject/calendering/ {
+            data dvagov.sharepoint.com/sites/OITEPMOPOLARISTeam/
+        }
+        vaww.oed.portal.va.gov/communities/osctm/onevatrm/ {
+            data dvagov.sharepoint.com/sites/OITEPMOOneVATRM/
+        }
+        vaww.oed.portal.va.gov/communities/osctm/osc/ {
+            data dvagov.sharepoint.com/sites/OITACOEPortal/TechnicalSolutions/CodeSharingServices
+        }
+        vaww.oed.portal.va.gov/communities/osctm/toolsmgmt/ {
+            data dvagov.sharepoint.com/sites/OITEPMOtoolsmgmt/
+        }
+        vaww.oed.portal.va.gov/communities/osctm/toolsmgmt/rational%20tools/ {
+            data dvagov.sharepoint.com/sites/OITACOEPortal/TechnicalSolutions/TSS
+        }
+        vaww.oed.portal.va.gov/communities/osctm/trm/ {
+            data dvagov.sharepoint.com/sites/OITEPMOTRM/
+        }
+        vaww.oed.portal.va.gov/communities/pm_competency/ {
+            data dvagov.sharepoint.com/sites/OITEPMOMondayPMCall/
+        }
+        vaww.oed.portal.va.gov/communities/softtesting_sect508/ {
+            data dvagov.sharepoint.com/sites/OITEPMOSoftwareTesting508/
+        }
+        vaww.oed.portal.va.gov/communities/tw/ {
+            data dvagov.sharepoint.com/sites/OITEPMOTW/
+        }
+        vaww.oed.portal.va.gov/development {
+            data dvagov.sharepoint.com/sites/epmodevelopment
+        }
+        vaww.oed.portal.va.gov/ehrm-internal {
+            data dvagov.sharepoint.com/sites/epmoehrminternal
+        }
+        vaww.oed.portal.va.gov/engineering {
+            data dvagov.sharepoint.com/sites/epmoengineering
+        }
+        vaww.oed.portal.va.gov/enterpriseservices {
+            data dvagov.sharepoint.com/sites/epmoenterpriseservices
+        }
+        vaww.oed.portal.va.gov/epmd {
+            data dvagov.sharepoint.com/sites/epmoepmd
+        }
+        vaww.oed.portal.va.gov/externalfacingexecutivemanagement {
+            data dvagov.sharepoint.com/sites/epmoefem
+        }
+        vaww.oed.portal.va.gov/pm/corporate/ {
+            data dvagov.sharepoint.com/sites/oitepmodcorporate/
+        }
+        vaww.oed.portal.va.gov/pm/hape/btsss/ {
+            data dvagov.sharepoint.com/sites/OITEPMOBT3S/
+        }
+        vaww.oed.portal.va.gov/pm/hape/hapeportfoliopmo/patientstatementenhancement/ {
+            data dvagov.sharepoint.com/sites/OITEPMOPSE/
+        }
+        vaww.oed.portal.va.gov/pm/hppmd/ {
+            data dvagov.sharepoint.com/sites/OITEPMOHealth/
+        }
+        vaww.oed.portal.va.gov/pm/iehr/vista_evolution/ {
+            data dvagov.sharepoint.com/sites/vacove2/
+        }
+        vaww.oed.portal.va.gov/pmas_bus_ofc {
+            data dvagov.sharepoint.com/sites/oitepmopbo
+        }
+        vaww.oed.portal.va.gov/products/automate_gi_bill {
+            data dvagov.sharepoint.com/sites/oitepmoecpic
+        }
+        vaww.oed.portal.va.gov/products/das {
+            data dvagov.sharepoint.com/sites/oitepmodatasrvcs
+        }
+        vaww.oed.portal.va.gov/products/mbms/home {
+            data dvagov.sharepoint.com/sites/oitepmombms
+        }
+        vaww.oed.portal.va.gov/products/vler/nwhin/ {
+            data dvagov.sharepoint.com/sites/oitepmonhwin/
+        }
+        vaww.oed.portal.va.gov/products/vler/vhvaproject {
+            data dvagov.sharepoint.com/sites/oitepmovhva
+        }
+        vaww.oed.portal.va.gov/program_management/ppo {
+            data dvagov.sharepoint.com/sites/oitepmoppo/
+        }
+        vaww.oed.portal.va.gov/projects/bgs/ {
+            data dvagov.sharepoint.com/sites/oitepmobgs/
+        }
+        vaww.oed.portal.va.gov/projects/bmsv2 {
+            data dvagov.sharepoint.com/sites/oitepmobmsv2
+        }
+        vaww.oed.portal.va.gov/projects/clinical_procedures/ {
+            data dvagov.sharepoint.com/sites/oitepmoclinicalprocedures/
+        }
+        vaww.oed.portal.va.gov/projects/cvt2/ {
+            data dvagov.sharepoint.com/sites/oitepmotmp2/
+        }
+        vaww.oed.portal.va.gov/projects/cvt/ {
+            data dvagov.sharepoint.com/sites/oitepmotmp/
+        }
+        vaww.oed.portal.va.gov/projects/genisis/ {
+            data dvagov.sharepoint.com/sites/oitepmogenisis/
+        }
+        vaww.oed.portal.va.gov/projects/hmpe_smkb/ {
+            data dvagov.sharepoint.com/sites/oitepmohmpemgmt/
+        }
+        vaww.oed.portal.va.gov/projects/hris {
+            data dvagov.sharepoint.com/sites/oitepmohris
+        }
+        vaww.oed.portal.va.gov/projects/ice/ {
+            data dvagov.sharepoint.com/sites/oitempovsignals/
+        }
+        vaww.oed.portal.va.gov/projects/jalfhcc/ {
+            data dvagov.sharepoint.com/sites/oitepmojalfhcc/
+        }
+        vaww.oed.portal.va.gov/projects/mhv_portal/ {
+            data dvagov.sharepoint.com/sites/oitepmomhv/
+        }
+        vaww.oed.portal.va.gov/projects/mobile_apps/ {
+            data dvagov.sharepoint.com/sites/oitepmomobileprogram/
+        }
+        vaww.oed.portal.va.gov/projects/myva/ {
+            data dvagov.sharepoint.com/sites/oitepmomyva/
+        }
+        vaww.oed.portal.va.gov/projects/nexgen_vcms/ {
+            data dvagov.sharepoint.com/sites/oitepmovems/
+        }
+        vaww.oed.portal.va.gov/projects/pact {
+            data dvagov.sharepoint.com/sites/oitepmopact
+        }
+        vaww.oed.portal.va.gov/projects/pcl5mhas/ {
+            data dvagov.sharepoint.com/sites/oitepmopcl5phase1/
+        }
+        vaww.oed.portal.va.gov/projects/pmas_dashboard/ {
+            data dvagov.sharepoint.com/sites/oitepmopmasdashboard/
+        }
+        vaww.oed.portal.va.gov/projects/pre/ {
+            data dvagov.sharepoint.com/sites/oitepmopre/
+        }
+        vaww.oed.portal.va.gov/projects/primavera/ {
+            data dvagov.sharepoint.com/sites/oitepmoprimavera/
+        }
+        vaww.oed.portal.va.gov/projects/rams/ {
+            data dvagov.sharepoint.com/sites/oitepmorams/
+        }
+        vaww.oed.portal.va.gov/projects/registries/ {
+            data dvagov.sharepoint.com/sites/oitepmoregistries/
+        }
+        vaww.oed.portal.va.gov/projects/sts/ {
+            data dvagov.sharepoint.com/sites/vhasts/
+        }
+        vaww.oed.portal.va.gov/projects/vape/ {
+            data dvagov.sharepoint.com/sites/oitepmovape/
+        }
+        vaww.oed.portal.va.gov/projects/vbecs {
+            data dvagov.sharepoint.com/sites/oitepmovbecs
+        }
+        vaww.oed.portal.va.gov/projects/vetsnet/CyberRoom/ {
+            data dvagov.sharepoint.com/sites/OITEPMOcyberRoom
+        }
+        vaww.oed.portal.va.gov/projects/vetsnet/cyberroom/ {
+            data dvagov.sharepoint.com/sites/OITEPMOcyberRoom
+        }
+        vaww.oed.portal.va.gov/projects/vetsnetfas/ {
+            data dvagov.sharepoint.com/sites/oitepmovfas/
+        }
+        vaww.oed.portal.va.gov/projects/via/ {
+            data dvagov.sharepoint.com/sites/oitepmovia/
+        }
+        vaww.oed.portal.va.gov/projects/vinci/ {
+            data dvagov.sharepoint.com/sites/oitepmovinci/
+        }
+        vaww.oed.portal.va.gov/projects/virtualva/ {
+            data dvagov.sharepoint.com/sites/oitepmolcm/
+        }
+        vaww.oed.portal.va.gov/projects/vista_maintenance/hpst3admin {
+            data dvagov.sharepoint.com/sites/oitepmohpst3admin
+        }
+        vaww.oed.portal.va.gov/projects/vssess/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVSSESS/
+        }
+        vaww.oed.portal.va.gov/sites/aca_rpm {
+            data dvagov.sharepoint.com/sites/oitacqmgmt
+        }
+        vaww.oed.portal.va.gov/sites/epmoprocess {
+            data dvagov.sharepoint.com/sites/oitepmoprocess
+        }
+        vaww.oed.portal.va.gov/sites/fcmt {
+            data dvagov.sharepoint.com/sites/oitepmofcmt
+        }
+        vaww.oed.portal.va.gov/sites/hra {
+            data dvagov.sharepoint.com/sites/oitepmohra
+        }
+        vaww.oed.portal.va.gov/sites/vbms/ {
+            data dvagov.sharepoint.com/sites/oitepmovbms/
+        }
+        vaww.oed.portal.va.gov/sites/vistaevolution {
+            data dvagov.sharepoint.com/sites/vacove/
+        }
+        vaww.oed.portal.va.gov/sites/vrm/crmudkm/ {
+            data dvagov.sharepoint.com/sites/OITEPMOCRM/
+        }
+        vaww.oed.portal.va.gov/sites/vrm/ehbd/ {
+            data dvagov.sharepoint.com/sites/oitepmoehbd
+        }
+        vaww.oed.portal.va.gov/sites/vrm/iam/ {
+            data dvagov.sharepoint.com/sites/OITEPMOIAM/
+        }
+        vaww.oed.portal.va.gov/sites/vrm/msti/ {
+            data dvagov.sharepoint.com/sites/oitepmomsdscgs/
+        }
+        vaww.oed.portal.va.gov/sites/vrm/pmo/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVRMPMO/
+        }
+        vaww.oed.portal.va.gov/sites/vrm/ss/ {
+            data dvagov.sharepoint.com/sites/OITEPMOSS/
+        }
+        vaww.oed.portal.va.gov/sites/vrm/uat/ {
+            data dvagov.sharepoint.com/sites/oitepmoveouat/
+        }
+        vaww.oed.portal.va.gov/sites/vrm/vam/ {
+            data dvagov.sharepoint.com/sites/oitepmovam/
+        }
+        vaww.oed.portal.va.gov/sites/vrmviers {
+            data dvagov.sharepoint.com/sites/oitepmovrmviers
+        }
+        vaww.oed.portal.va.gov/sites/workmgmt/wfminternal/timeandleave/ {
+            data dvagov.sharepoint.com/sites/oitepmotl/
+        }
+        vaww.oed.portal.va.gov/sites/workmgmt/workforce%20shaping%20and%20compliance/ {
+            data dvagov.sharepoint.com/sites/oitepmowsc/
+        }
+        vaww.oed.portal.va.gov/support/bdn_products/ {
+            data dvagov.sharepoint.com/sites/OITEPMObdnproducts/
+        }
+        vaww.oed.portal.va.gov/support/bdn_products/team2/ {
+            data dvagov.sharepoint.com/sites/OITEPMOBDNBatch/
+        }
+        vaww.oed.portal.va.gov/support/bdn_products/team3/ {
+            data dvagov.sharepoint.com/sites/OITEPMOBDNOLTP/
+        }
+        vaww.oed.portal.va.gov/support/benefits_products/ {
+            data dvagov.sharepoint.com/sites/OITEPMObpss/
+        }
+        vaww.oed.portal.va.gov/support/benefits_products/education/ {
+            data dvagov.sharepoint.com/sites/OITEPMOEVRPLPARTNERS/
+        }
+        vaww.oed.portal.va.gov/support/benefits_products/nca/ {
+            data dvagov.sharepoint.com/sites/OITEPMOMBS/
+        }
+        vaww.oed.portal.va.gov/support/benefits_support_management/ {
+            data dvagov.sharepoint.com/sites/OITEPMOmanagement/
+        }
+        vaww.portal2.va.gov/sites/albsps/ {
+            data dvagov.sharepoint.com/sites/VBAALBSPS
+        }
+        vaww.portal2.va.gov/sites/asd/aerb/ {
+            data dvagov.sharepoint.com/sites/OITEPMOSTAT/
+        }
+        vaww.portal2.va.gov/sites/asd/opendata/ {
+            data dvagov.sharepoint.com/sites/OITEPMOOpenData/
+        }
+        vaww.portal2.va.gov/sites/asd/techstrat/ {
+            data dvagov.sharepoint.com/sites/OITEPMOTechStrat/
+        }
+        vaww.portal2.va.gov/sites/asd/techstrat/trm/ {
+            data dvagov.sharepoint.com/sites/OITEPMODMDTRM/
+        }
+        vaww.portal2.va.gov/sites/asd/trms/ {
+            data dvagov.sharepoint.com/sites/OITEPMOTRMS/
+        }
+        vaww.portal2.va.gov/sites/asd/tsa/ {
+            data dvagov.sharepoint.com/sites/OITEPMODMDTSAS/
+        }
+        vaww.portal2.va.gov/sites/bcro {
+            data dvagov.sharepoint.com/sites/vhabcro
+        }
+        vaww.portal2.va.gov/sites/cao/ {
+            data dvagov.sharepoint.com/sites/VBACAO
+        }
+        vaww.portal2.va.gov/sites/coi/ {
+            data dvagov.sharepoint.com/sites/VHACOI
+        }
+        vaww.portal2.va.gov/sites/dbss/ {
+            data dvagov.sharepoint.com/sites/VBADBSS
+        }
+        vaww.portal2.va.gov/sites/dmc/ {
+            data dvagov.sharepoint.com/sites/OITDMC
+        }
+        vaww.portal2.va.gov/sites/durham/ {
+            data dvagov.sharepoint.com/sites/VHADurham
+        }
+        vaww.portal2.va.gov/sites/edit/ {
+            data dvagov.sharepoint.com/sites/OITEDIT
+        }
+        vaww.portal2.va.gov/sites/eii {
+            data dvagov.sharepoint.com/sites/eii
+        }
+        vaww.portal2.va.gov/sites/fiduciaryservice21f2 {
+            data dvagov.sharepoint.com/sites/fiduciaryservice21f2
+        }
+        vaww.portal2.va.gov/sites/hac1/ {
+            data dvagov.sharepoint.com/sites/VHAHAC1
+        }
+        vaww.portal2.va.gov/sites/haiiss_training_archives/ {
+            data dvagov.sharepoint.com/sites/VHAHAIISSTrainingArchives
+        }
+        vaww.portal2.va.gov/sites/hrabudgetoffice/ {
+            data dvagov.sharepoint.com/sites/VACOHRABudgetOffice
+        }
+        vaww.portal2.va.gov/sites/hspd12pmo/ {
+            data dvagov.sharepoint.com/sites/VACOHSPD12PMO
+        }
+        vaww.portal2.va.gov/sites/icare/ {
+            data dvagov.sharepoint.com/sites/VACOICARE
+        }
+        vaww.portal2.va.gov/sites/iip {
+            data dvagov.sharepoint.com/sites/iip
+        }
+        vaww.portal2.va.gov/sites/impersonservice {
+            data dvagov.sharepoint.com/sites/vhaimpersonservice
+        }
+        vaww.portal2.va.gov/sites/ipera/ {
+            data dvagov.sharepoint.com/sites/VBAIPERA
+        }
+        vaww.portal2.va.gov/sites/md {
+            data dvagov.sharepoint.com/sites/oitmd
+        }
+        vaww.portal2.va.gov/sites/mentalhealth/ {
+            data dvagov.sharepoint.com/sites/VACOMentalHealth
+        }
+        vaww.portal2.va.gov/sites/nfoiso {
+            data dvagov.sharepoint.com/sites/oitnfoiso
+        }
+        vaww.portal2.va.gov/sites/nro {
+            data dvagov.sharepoint.com/sites/vbanro
+        }
+        vaww.portal2.va.gov/sites/oaa/ {
+            data dvagov.sharepoint.com/sites/VHAoaa
+        }
+        vaww.portal2.va.gov/sites/officeofbudget/ {
+            data dvagov.sharepoint.com/sites/VACO041budget/CommunicationOfficeOfBudget
+        }
+        vaww.portal2.va.gov/sites/oitcomm/ {
+            data dvagov.sharepoint.com/sites/OITCOMM
+        }
+        vaww.portal2.va.gov/sites/oithr/ {
+            data dvagov.sharepoint.com/sites/OITHR
+        }
+        vaww.portal2.va.gov/sites/ophsr/ {
+            data dvagov.sharepoint.com/sites/VHAOPHSR
+        }
+        vaww.portal2.va.gov/sites/ophsr_new/ {
+            data dvagov.sharepoint.com/sites/VHAnewOPHSR
+        }
+        vaww.portal2.va.gov/sites/pai/ {
+            data dvagov.sharepoint.com/sites/VBAPAI
+        }
+        vaww.portal2.va.gov/sites/philadelphia/ {
+            data dvagov.sharepoint.com/sites/VBAphiladelphia
+        }
+        vaww.portal2.va.gov/sites/r5/ {
+            data dvagov.sharepoint.com/sites/OITR5
+        }
+        vaww.portal2.va.gov/sites/ro319/ {
+            data dvagov.sharepoint.com/sites/VBARO319
+        }
+        vaww.portal2.va.gov/sites/rrtf/ {
+            data dvagov.sharepoint.com/sites/OITRRTF
+        }
+        vaww.portal2.va.gov/sites/skype {
+            data dvagov.sharepoint.com/sites/oitskype
+        }
+        vaww.portal2.va.gov/sites/southernarea/ {
+            data dvagov.sharepoint.com/sites/VBASouthernArea
+        }
+        vaww.portal2.va.gov/sites/splncior05/vba/togusro/ {
+            data dvagov.sharepoint.com/sites/VBATOG/
+        }
+        vaww.portal2.va.gov/sites/tma/ {
+            data dvagov.sharepoint.com/sites/OITTMA
+        }
+        vaww.portal2.va.gov/sites/v21 {
+            data dvagov.sharepoint.com/sites/oitv21
+        }
+        vaww.portal2.va.gov/sites/vamisc/ {
+            data dvagov.sharepoint.com/sites/VHAVAMISC
+        }
+        vaww.portal2.va.gov/sites/vanra/ {
+            data dvagov.sharepoint.com/sites/VHAVanra
+        }
+        vaww.portal2.va.gov/sites/vants/ {
+            data dvagov.sharepoint.com/sites/OITVANTS
+        }
+        vaww.portal2.va.gov/sites/vapmcoe/ {
+            data dvagov.sharepoint.com/sites/VACOVAPMCOE
+        }
+        vaww.portal2.va.gov/sites/vbaacquisitionstaff {
+            data dvagov.sharepoint.com/sites/vbaacquisitionstaff
+        }
+        vaww.portal2.va.gov/sites/vbaanchorage/ {
+            data dvagov.sharepoint.com/sites/VBAAnchorage
+        }
+        vaww.portal2.va.gov/sites/vbacrisp/ {
+            data dvagov.sharepoint.com/sites/VBACRISP
+        }
+        vaww.portal2.va.gov/sites/vbaslcdirector/ {
+            data dvagov.sharepoint.com/sites/VBASLCDirector
+        }
+        vaww.portal2.va.gov/sites/vbaws/ {
+            data dvagov.sharepoint.com/sites/VBAWS
+        }
+        vaww.portal2.va.gov/sites/vetcentered/ {
+            data dvagov.sharepoint.com/sites/VHAVetCentered
+        }
+        vaww.portal2.va.gov/sites/vhaohi/ {
+            data dvagov.sharepoint.com/sites/VHAOHI
+        }
+        vaww.portal2.va.gov/sites/vhaproducteffectiveness/ {
+            data dvagov.sharepoint.com/sites/VHAProductEffectiveness
+        }
+        vaww.portal2.va.gov/sites/wh-pbrn/ {
+            data dvagov.sharepoint.com/sites/VHAWHPBRN
+        }
+        vaww.portal2.va.gov/sites/wit/ {
+            data dvagov.sharepoint.com/sites/VBAWIT
+        }
+        vaww.portal2.va.gov/sites/wsvbms/ {
+            data dvagov.sharepoint.com/sites/VBAWSVBMS
+        }
+        vaww.portal2.va.gov/sites/wvpp/ {
+            data dvagov.sharepoint.com/sites/VHAWVPP
+        }
+        vaww.portal.va.gov/itbo/ops-pi/ {
+            data dvagov.sharepoint.com/sites/OITOPSPI
+        }
+        vaww.portal.va.gov/itbo/pm/ {
+            data dvagov.sharepoint.com/sites/OITPM
+        }
+        vaww.portal.va.gov/sites/041budget/ {
+            data dvagov.sharepoint.com/sites/VACO041budget
+        }
+        vaww.portal.va.gov/sites/2012scip/ {
+            data dvagov.sharepoint.com/sites/VACO2012SCIP
+        }
+        vaww.portal.va.gov/sites/2013scip/ {
+            data dvagov.sharepoint.com/sites/VACO2013SCIP
+        }
+        vaww.portal.va.gov/sites/2014scip/ {
+            data dvagov.sharepoint.com/sites/VACO2014SCIP
+        }
+        vaww.portal.va.gov/sites/2016scip/ {
+            data dvagov.sharepoint.com/sites/VACO2016SCIP
+        }
+        vaww.portal.va.gov/sites/2017scip/ {
+            data dvagov.sharepoint.com/sites/VACO2017SCIP
+        }
+        vaww.portal.va.gov/sites/2018scip/ {
+            data dvagov.sharepoint.com/sites/VACO2018SCIP
+        }
+        vaww.portal.va.gov/sites/act_community/ {
+            data dvagov.sharepoint.com/sites/VHAACTCommunity
+        }
+        vaww.portal.va.gov/sites/arra_recovery {
+            data dvagov.sharepoint.com/sites/arra_recovery
+        }
+        vaww.portal.va.gov/sites/bahpilot {
+            data dvagov.sharepoint.com/sites/bahpilot
+        }
+        vaww.portal.va.gov/sites/btmp/ {
+            data dvagov.sharepoint.com/sites/VHABTMP
+        }
+        vaww.portal.va.gov/sites/cbo_pci/ {
+            data dvagov.sharepoint.com/sites/VHACBOPCI
+        }
+        vaww.portal.va.gov/sites/cfm/ {
+            data dvagov.sharepoint.com/sites/VACOCFM
+        }
+        vaww.portal.va.gov/sites/cgp/ {
+            data dvagov.sharepoint.com/sites/VHACGP
+        }
+        vaww.portal.va.gov/sites/chapter33fieldsite/ {
+            data dvagov.sharepoint.com/sites/OITChapter33FieldSite
+        }
+        vaww.portal.va.gov/sites/cpst/ {
+            data dvagov.sharepoint.com/sites/OITCPST
+        }
+        vaww.portal.va.gov/sites/cpt_community/ {
+            data dvagov.sharepoint.com/sites/VHACPTCommunity
+        }
+        vaww.portal.va.gov/sites/det-329hrc/ {
+            data dvagov.sharepoint.com/sites/VBADET394HRC
+        }
+        vaww.portal.va.gov/sites/diabetes {
+            data dvagov.sharepoint.com/sites/vhadiabetes
+        }
+        vaww.portal.va.gov/sites/earea/ {
+            data dvagov.sharepoint.com/sites/VBAEasternAREA
+        }
+        vaww.portal.va.gov/sites/ecs/aim/ {
+            data dvagov.sharepoint.com/sites/OITEPMOECSOAIMS/
+        }
+        vaww.portal.va.gov/sites/ecs/application/ {
+            data dvagov.sharepoint.com/sites/OITEPMOECSOApplication/
+        }
+        vaww.portal.va.gov/sites/ecs/archives/ {
+            data dvagov.sharepoint.com/sites/OITEPMOECSOArchives/
+        }
+        vaww.portal.va.gov/sites/ecs/cas/ {
+            data dvagov.sharepoint.com/sites/OITEPMOECSOCAS/
+        }
+        vaww.portal.va.gov/sites/ecs/coms/ {
+            data dvagov.sharepoint.com/sites/OITEPMOECSOCOMS
+        }
+        vaww.portal.va.gov/sites/ecs/css/ {
+            data dvagov.sharepoint.com/sites/OITEPMOECSOCSS/
+        }
+        vaww.portal.va.gov/sites/ecs/ecso/ {
+            data dvagov.sharepoint.com/sites/OITEPMOECSOVATeam/
+        }
+        vaww.portal.va.gov/sites/ecs/ecsoteam/ {
+            data dvagov.sharepoint.com/sites/oitepmoecsoteam
+        }
+        vaww.portal.va.gov/sites/ecs/ecsoteamres/ {
+            data dvagov.sharepoint.com/sites/oitepmoecsobudacq
+        }
+        vaww.portal.va.gov/sites/ednursing/ {
+            data dvagov.sharepoint.com/sites/VHAEDNursing
+        }
+        vaww.portal.va.gov/sites/edw {
+            data dvagov.sharepoint.com/sites/edw
+        }
+        vaww.portal.va.gov/sites/fhie_bhie {
+            data dvagov.sharepoint.com/sites/oitfhiebhie
+        }
+        vaww.portal.va.gov/sites/fss%20data%20center%20support%20division/ {
+            data dvagov.sharepoint.com/sites/OITESODCSD
+        }
+        vaww.portal.va.gov/sites/gmac/ {
+            data dvagov.sharepoint.com/sites/VHAGMAC
+        }
+        vaww.portal.va.gov/sites/icd-10 { }
+        vaww.portal.va.gov/sites/itrm/ {
+            data dvagov.sharepoint.com/sites/OITITRM
+        }
+        vaww.portal.va.gov/sites/mdws/ {
+            data dvagov.sharepoint.com/sites/OITMDWS
+        }
+        vaww.portal.va.gov/sites/mms/ {
+            data dvagov.sharepoint.com/sites/VHAMMS
+        }
+        vaww.portal.va.gov/sites/nca {
+            data dvagov.sharepoint.com/sites/nca
+        }
+        vaww.portal.va.gov/sites/ncptsd%20dissemination%20and%20training/ {
+            data dvagov.sharepoint.com/sites/vhancptsddandt
+        }
+        vaww.portal.va.gov/sites/ncrcpublic/ {
+            data dvagov.sharepoint.com/sites/vhancrcpublic
+        }
+        vaww.portal.va.gov/sites/oakland_northern_california_vba_team_secure_portal {
+            data dvagov.sharepoint.com/sites/vbaonbc_team_secure_portal
+        }
+        vaww.portal.va.gov/sites/office_of_financial_policy/ {
+            data dvagov.sharepoint.com/sites/VHAOfficeOfFinancialPolicy
+        }
+        vaww.portal.va.gov/sites/ofosp/ {
+            data dvagov.sharepoint.com/sites/VACOOFOSP
+        }
+        vaww.portal.va.gov/sites/ohshg/ {
+            data dvagov.sharepoint.com/sites/VHAohshg
+        }
+        vaww.portal.va.gov/sites/pact/ {
+            data dvagov.sharepoint.com/sites/VHAPACT
+        }
+        vaww.portal.va.gov/sites/par {
+            data dvagov.sharepoint.com/sites/vacopar
+        }
+        vaww.portal.va.gov/sites/pcmhihub/pcmhi/ {
+            data dvagov.sharepoint.com/sites/VHAfocus-areas/primary-care/primary-care-mental-health-integration
+        }
+        vaww.portal.va.gov/sites/pmc {
+            data dvagov.sharepoint.com/sites/vacopmc
+        }
+        vaww.portal.va.gov/sites/pmdb/ {
+            data dvagov.sharepoint.com/sites/VHAPMDB
+        }
+        vaww.portal.va.gov/sites/product_effectiveness_group {
+            data dvagov.sharepoint.com/sites/vhaproducteffectivenessgroup
+        }
+        vaww.portal.va.gov/sites/ptsd_mentoring/pages/home.aspx {
+            data dvagov.sharepoint.com/sites/vhaptsdmentoring/sitepages/home.aspx
+        }
+        vaww.portal.va.gov/sites/qmedoit/ {
+            data dvagov.sharepoint.com/sites/QMEDOIT
+        }
+        vaww.portal.va.gov/sites/rec_therapy/ {
+            data dvagov.sharepoint.com/sites/VHARecTherapy
+        }
+        vaww.portal.va.gov/sites/sao/ {
+            data dvagov.sharepoint.com/sites/VBASAO
+        }
+        vaww.portal.va.gov/sites/simlearn/ {
+            data dvagov.sharepoint.com/sites/VBASimLEARN
+        }
+        vaww.portal.va.gov/sites/slmb/ {
+            data dvagov.sharepoint.com/sites/OITSLMB
+        }
+        vaww.portal.va.gov/sites/splncio/ {
+            data dvagov.sharepoint.com/sites/OITSPLNCIO
+        }
+        vaww.portal.va.gov/sites/t-21%20integrated%20curriculum {
+            data dvagov.sharepoint.com/sites/VHAT21IntegratedCurriculum
+        }
+        vaww.portal.va.gov/sites/tobacco {
+            data dvagov.sharepoint.com/sites/vhatobacco
+        }
+        vaww.portal.va.gov/sites/vasync/ {
+            data dvagov.sharepoint.com/sites/VHAVASync
+        }
+        vaww.portal.va.gov/sites/vbacalculatorproject {
+            data dvagov.sharepoint.com/sites/vbacalculatorproject
+        }
+        vaww.portal.va.gov/sites/vha_oi_admin {
+            data dvagov.sharepoint.com/sites/vhaoiadmin
+        }
+        vaww.portal.va.gov/sites/vha_vein/ {
+            data dvagov.sharepoint.com/sites/VHAVEIN
+        }
+        vaww.portal.va.gov/sites/vhaem/ {
+            data dvagov.sharepoint.com/sites/VHAEM
+        }
+        vaww.portal.va.gov/sites/vhaknow/ {
+            data dvagov.sharepoint.com/sites/VHAKnow
+        }
+        vaww.portal.va.gov/sites/vhaservicecenter {
+            data dvagov.sharepoint.com/sites/vhaservicecenter
+        }
+        vaww.portal.va.gov/sites/whedurepos {
+            data dvagov.sharepoint.com/sites/whedurepos
+        }
+        vaww.portal.va.gov/sites/wpa/ {
+            data dvagov.sharepoint.com/sites/VACOWPA
+        }
+        vaww.portal.va.gov/sites/wriisc/ {
+            data dvagov.sharepoint.com/sites/VHAWRIISC
+        }
+        vaww.project.portal.va.gov/paopwa/1607-008/ {
+            data dvagov.sharepoint.com/sites/OITEPMOMVPChampion/
+        }
+        vaww.project.portal.va.gov/paopwa/2017-456/ {
+            data dvagov.sharepoint.com/sites/OITEPMOEPMDESDVP/
+        }
+        vaww.vashare.nca.va.gov/sites/dusofandp/ {
+            data dvagov.sharepoint.com/sites/NCADUSOFandP
+        }
+        vaww.vashare.nca.va.gov/sites/hca/ {
+            data dvagov.sharepoint.com/sites/NCAHCA
+        }
+        vaww.vashare.nca.va.gov/sites/ncahistory/ {
+            data dvagov.sharepoint.com/sites/NCAHistory
+        }
+        vaww.vashare.nca.va.gov/sites/pps/ {
+            data dvagov.sharepoint.com/sites/NCAPPS
+        }
+        vaww.vashare.nca.va.gov/sites/strategiccommcouncil/ {
+            data dvagov.sharepoint.com/sites/NCAStrategicCommCouncil
+        }
+        vaww.vashare.oit.va.gov/sites/ad/ {
+            data dvagov.sharepoint.com/sites/OITAD
+        }
+        vaww.vashare.oit.va.gov/sites/aims {
+            data dvagov.sharepoint.com/sites/oitaims
+        }
+        vaww.vashare.oit.va.gov/sites/amo/ {
+            data dvagov.sharepoint.com/sites/OITAMO
+        }
+        vaww.vashare.oit.va.gov/sites/bb/ {
+            data dvagov.sharepoint.com/sites/OITBB
+        }
+        vaww.vashare.oit.va.gov/sites/bwvie/ {
+            data dvagov.sharepoint.com/sites/OITBWVIE
+        }
+        vaww.vashare.oit.va.gov/sites/cmwa/ {
+            data dvagov.sharepoint.com/sites/OITCMWA
+        }
+        vaww.vashare.oit.va.gov/sites/communitycare/ {
+            data dvagov.sharepoint.com/sites/OITEPMOProviderPaymentsEDI/
+        }
+        vaww.vashare.oit.va.gov/sites/creator {
+            data dvagov.sharepoint.com/sites/oitcreator
+        }
+        vaww.vashare.oit.va.gov/sites/crrc/ {
+            data dvagov.sharepoint.com/sites/OITCRRC
+        }
+        vaww.vashare.oit.va.gov/sites/csss/ {
+            data dvagov.sharepoint.com/sites/OITCSSS
+        }
+        vaww.vashare.oit.va.gov/sites/dco-pitc/ {
+            data dvagov.sharepoint.com/sites/OITDCOPITC
+        }
+        vaww.vashare.oit.va.gov/sites/dmo/ {
+            data dvagov.sharepoint.com/sites/oitepmoias/
+        }
+        vaww.vashare.oit.va.gov/sites/eap {
+            data dvagov.sharepoint.com/sites/oitepmoeap
+        }
+        vaww.vashare.oit.va.gov/sites/earelease {
+            data dvagov.sharepoint.com/sites/earelease
+        }
+        vaww.vashare.oit.va.gov/sites/easupportcontract/ {
+            data dvagov.sharepoint.com/sites/OITEASupportContract
+        }
+        vaww.vashare.oit.va.gov/sites/ediscovery/ {
+            data dvagov.sharepoint.com/sites/OITEDISCOVERY
+        }
+        vaww.vashare.oit.va.gov/sites/ehrmactiontracker/ {
+            data dvagov.sharepoint.com/sites/OITEHRMActionTracker
+        }
+        vaww.vashare.oit.va.gov/sites/eo/ {
+            data dvagov.sharepoint.com/sites/OITEO
+        }
+        vaww.vashare.oit.va.gov/sites/eoitamcloudteam {
+            data dvagov.sharepoint.com/sites/oiteoitamcloudteam
+        }
+        vaww.vashare.oit.va.gov/sites/epmd-es/ {
+            data dvagov.sharepoint.com/sites/OITEPMOEPMDES/
+        }
+        vaww.vashare.oit.va.gov/sites/etmhardware {
+            data dvagov.sharepoint.com/sites/etmhardware
+        }
+        vaww.vashare.oit.va.gov/sites/facilitation {
+            data dvagov.sharepoint.com/sites/OITFacilitation
+        }
+        vaww.vashare.oit.va.gov/sites/hac/ {
+            data dvagov.sharepoint.com/sites/OITHAC
+        }
+        vaww.vashare.oit.va.gov/sites/hbmc/ {
+            data dvagov.sharepoint.com/sites/OITHbmc
+        }
+        vaww.vashare.oit.va.gov/sites/herc/ {
+            data dvagov.sharepoint.com/sites/OITHERC
+        }
+        vaww.vashare.oit.va.gov/sites/hitc/ {
+            data dvagov.sharepoint.com/sites/OITHITC
+        }
+        vaww.vashare.oit.va.gov/sites/io/products/oit/scw/ {
+            data dvagov.sharepoint.com/sites/OITEPMOSCW/
+        }
+        vaww.vashare.oit.va.gov/sites/io/products/vafs/fms/ {
+            data dvagov.sharepoint.com/sites/OITEPMOFMS/
+        }
+        vaww.vashare.oit.va.gov/sites/iotransformation {
+            data dvagov.sharepoint.com/sites/oitiotransformation
+        }
+        vaww.vashare.oit.va.gov/sites/ipt {
+            data dvagov.sharepoint.com/sites/oitipt
+        }
+        vaww.vashare.oit.va.gov/sites/isac {
+            data dvagov.sharepoint.com/sites/isac
+        }
+        vaww.vashare.oit.va.gov/sites/itamrm/ {
+            data dvagov.sharepoint.com/sites/OITITAMRM
+        }
+        vaww.vashare.oit.va.gov/sites/itopscsi {
+            data dvagov.sharepoint.com/sites/oititopscsi
+        }
+        vaww.vashare.oit.va.gov/sites/itopseis/ {
+            data dvagov.sharepoint.com/sites/OITITOPSEIS
+        }
+        vaww.vashare.oit.va.gov/sites/mccf/ {
+            data dvagov.sharepoint.com/sites/OITMCCF
+        }
+        vaww.vashare.oit.va.gov/sites/mom/ {
+            data dvagov.sharepoint.com/sites/OITMOM
+        }
+        vaww.vashare.oit.va.gov/sites/mpdu {
+            data dvagov.sharepoint.com/sites/oitmpdu
+        }
+        vaww.vashare.oit.va.gov/sites/mws/ {
+            data dvagov.sharepoint.com/sites/OITMWS
+        }
+        vaww.vashare.oit.va.gov/sites/ndcol/ {
+            data dvagov.sharepoint.com/sites/OITNDCOL
+        }
+        vaww.vashare.oit.va.gov/sites/oalctracker/ {
+            data dvagov.sharepoint.com/sites/OITOALCTracker
+        }
+        vaww.vashare.oit.va.gov/sites/ocs/ {
+            data dvagov.sharepoint.com/sites/OITOCS
+        }
+        vaww.vashare.oit.va.gov/sites/omega/ {
+            data dvagov.sharepoint.com/sites/OITOmega
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEA/
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/comm/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEACOMM/
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/ehrm/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEAeHRM/
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/entarch/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEAentarch/
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/plm/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEAplm/
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/saet/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEASAET/
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/sp/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEASP/
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/veams/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEAVEAMS/
+        }
+        vaww.vashare.oit.va.gov/sites/onevaea/workingdocuments/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVAEAworkingdocuments/
+        }
+        vaww.vashare.oit.va.gov/sites/opensourcelab/ {
+            data dvagov.sharepoint.com/sites/OITOpenSourcelab
+        }
+        vaww.vashare.oit.va.gov/sites/oprm/ {
+            data dvagov.sharepoint.com/sites/OITPrivacyService
+        }
+        vaww.vashare.oit.va.gov/sites/oprmdeliverables {
+            data dvagov.sharepoint.com/sites/oitoprmdeliverables
+        }
+        vaww.vashare.oit.va.gov/sites/ospa/ {
+            data dvagov.sharepoint.com/sites/OITQPR/DMAD
+        }
+        vaww.vashare.oit.va.gov/sites/otg/ {
+            data dvagov.sharepoint.com/sites/OITOTG
+        }
+        vaww.vashare.oit.va.gov/sites/oto {
+            data dvagov.sharepoint.com/sites/epmooto
+        }
+        vaww.vashare.oit.va.gov/sites/pseslbackoffice {
+            data dvagov.sharepoint.com/sites/oitpseslbackoffice
+        }
+        vaww.vashare.oit.va.gov/sites/qpr/ {
+            data dvagov.sharepoint.com/sites/OITQPR
+        }
+        vaww.vashare.oit.va.gov/sites/r5is {
+            data dvagov.sharepoint.com/sites/oitr5is
+        }
+        vaww.vashare.oit.va.gov/sites/rms/ {
+            data dvagov.sharepoint.com/sites/OITRMS
+        }
+        vaww.vashare.oit.va.gov/sites/rxsu2 {
+            data dvagov.sharepoint.com/sites/OITrxsu2
+        }
+        vaww.vashare.oit.va.gov/sites/sio/ {
+            data dvagov.sharepoint.com/sites/OITSIO
+        }
+        vaww.vashare.oit.va.gov/sites/soa {
+            data dvagov.sharepoint.com/sites/oitsoa
+        }
+        vaww.vashare.oit.va.gov/sites/strategicsourcing/ {
+            data dvagov.sharepoint.com/sites/OITStrategicSourcing
+        }
+        vaww.vashare.oit.va.gov/sites/strongauth/ {
+            data dvagov.sharepoint.com/sites/OITStrongAuth
+        }
+        vaww.vashare.oit.va.gov/sites/trs {
+            data dvagov.sharepoint.com/sites/oittrs
+        }
+        vaww.vashare.oit.va.gov/sites/ucis/ {
+            data dvagov.sharepoint.com/sites/OITUCIS
+        }
+        vaww.vashare.oit.va.gov/sites/vaaa {
+            data dvagov.sharepoint.com/sites/oitvaaa
+        }
+        vaww.vashare.oit.va.gov/sites/vaiqreplacement/ {
+            data dvagov.sharepoint.com/sites/OITVAIQReplacement
+        }
+        vaww.vashare.oit.va.gov/sites/veamsteam/ {
+            data dvagov.sharepoint.com/sites/OITVEAMSTeam
+        }
+        vaww.vashare.oit.va.gov/sites/vetext/ {
+            data dvagov.sharepoint.com/sites/OITvetext
+        }
+        vaww.vashare.oit.va.gov/sites/vhatcfinternsclassof2007 {
+            data dvagov.sharepoint.com/sites/vhatcfinterns
+        }
+        vaww.vashare.oit.va.gov/sites/visr/ {
+            data dvagov.sharepoint.com/sites/OITVISR
+        }
+        vaww.vashare.oit.va.gov/sites/vrm/ {
+            data dvagov.sharepoint.com/sites/OITEPMOVRMTI/
+        }
+        vaww.vashare.oit.va.gov/sites/vrmti/ {
+            data dvagov.sharepoint.com/sites/OITVRMTI
+        }
+        vaww.vashare.oit.va.gov/sites/vva/ {
+            data dvagov.sharepoint.com/sites/OITVVA
+        }
+        vaww.vashare.vaco.va.gov/sites/17/ {
+            data dvagov.sharepoint.com/sites/VACO17
+        }
+        vaww.vashare.vaco.va.gov/sites/172/ {
+            data dvagov.sharepoint.com/sites/VACO172
+        }
+        vaww.vashare.vaco.va.gov/sites/174 {
+            data dvagov.sharepoint.com/sites/VACO174
+        }
+        vaww.vashare.vaco.va.gov/sites/2020scip/ {
+            data dvagov.sharepoint.com/sites/VACO2020scip
+        }
+        vaww.vashare.vaco.va.gov/sites/brand/ {
+            data dvagov.sharepoint.com/sites/VACOBrand
+        }
+        vaww.vashare.vaco.va.gov/sites/csrt/ {
+            data dvagov.sharepoint.com/sites/VACOCSRT
+        }
+        vaww.vashare.vaco.va.gov/sites/etr/ {
+            data dvagov.sharepoint.com/sites/VACOETR
+        }
+        vaww.vashare.vaco.va.gov/sites/finmanguides/ {
+            data dvagov.sharepoint.com/sites/VHAfinmanguides
+        }
+        vaww.vashare.vaco.va.gov/sites/fleetmanagement/ {
+            data dvagov.sharepoint.com/sites/VACOFleetmanagement
+        }
+        vaww.vashare.vaco.va.gov/sites/fmac/ {
+            data dvagov.sharepoint.com/sites/VACOFMAC
+        }
+        vaww.vashare.vaco.va.gov/sites/fmbt {
+            data dvagov.sharepoint.com/sites/vacofmbt
+        }
+        vaww.vashare.vaco.va.gov/sites/hrec/ {
+            data dvagov.sharepoint.com/sites/VACOHREC
+        }
+        vaww.vashare.vaco.va.gov/sites/ics/ {
+            data dvagov.sharepoint.com/sites/VACOOMOBO/FROS
+        }
+        vaww.vashare.vaco.va.gov/sites/ipera/ {
+            data dvagov.sharepoint.com/sites/VACOIPERA
+        }
+        vaww.vashare.vaco.va.gov/sites/leasereviews {
+            data dvagov.sharepoint.com/sites/vacoleasereviews
+        }
+        vaww.vashare.vaco.va.gov/sites/lva/ {
+            data dvagov.sharepoint.com/sites/VACOLVA
+        }
+        vaww.vashare.vaco.va.gov/sites/myva/ {
+            data dvagov.sharepoint.com/sites/VACOMYVA
+        }
+        vaww.vashare.vaco.va.gov/sites/nca42e {
+            data dvagov.sharepoint.com/sites/vaconca42e
+        }
+        vaww.vashare.vaco.va.gov/sites/nnu2016 {
+            data dvagov.sharepoint.com/sites/VACONNU2016
+        }
+        vaww.vashare.vaco.va.gov/sites/nnurfi {
+            data dvagov.sharepoint.com/sites/vaconnurfi
+        }
+        vaww.vashare.vaco.va.gov/sites/oaemduediligence {
+            data dvagov.sharepoint.com/sites/vacooaemuediligence
+        }
+        vaww.vashare.vaco.va.gov/sites/oaemtraining/ {
+            data dvagov.sharepoint.com/sites/VACOOAEMTraining
+        }
+        vaww.vashare.vaco.va.gov/sites/oemr/ {
+            data dvagov.sharepoint.com/sites/VACOOEMR
+        }
+        vaww.vashare.vaco.va.gov/sites/oess/ {
+            data dvagov.sharepoint.com/sites/VACOOESS
+        }
+        vaww.vashare.vaco.va.gov/sites/pathways/ {
+            data dvagov.sharepoint.com/sites/VACOPathways
+        }
+        vaww.vashare.vaco.va.gov/sites/patientadvocacy/ {
+            data dvagov.sharepoint.com/sites/VACOPatientAdvocacy
+        }
+        vaww.vashare.vaco.va.gov/sites/pio/ {
+            data dvagov.sharepoint.com/sites/VACOOBO
+        }
+        vaww.vashare.vaco.va.gov/sites/projectspecialforces/ {
+            data dvagov.sharepoint.com/sites/VACOProjectSpecialForces
+        }
+        vaww.vashare.vaco.va.gov/sites/psim {
+            data dvagov.sharepoint.com/sites/vacopsim
+        }
+        vaww.vashare.vaco.va.gov/sites/pya/ {
+            data dvagov.sharepoint.com/sites/VACOPYA
+        }
+        vaww.vashare.vaco.va.gov/sites/supportservicesknowledgemanagement {
+            data dvagov.sharepoint.com/sites/vacosupportserviceskm
+        }
+        vaww.vashare.vaco.va.gov/sites/sustainablebuildings/ {
+            data dvagov.sharepoint.com/sites/VACOSustainablebuildings
+        }
+        vaww.vashare.vaco.va.gov/sites/uc2011/ {
+            data dvagov.sharepoint.com/sites/vacouc2011
+        }
+        vaww.vashare.vaco.va.gov/sites/usvetsdeliverables/ {
+            data dvagov.sharepoint.com/sites/VACOUSVETSDeliverables
+        }
+        vaww.vashare.vaco.va.gov/sites/vamod/ {
+            data dvagov.sharepoint.com/sites/VACOVAMod
+        }
+        vaww.vashare.vaco.va.gov/sites/vapreparedness {
+            data dvagov.sharepoint.com/sites/vacovapreparedness
+        }
+        vaww.vashare.vaco.va.gov/sites/vasafety {
+            data dvagov.sharepoint.com/sites/vacovasafety
+        }
+        vaww.vashare.vaco.va.gov/sites/vcamp {
+            data dvagov.sharepoint.com/sites/vcamp
+        }
+        vaww.vashare.vaco.va.gov/sites/veo {
+            data dvagov.sharepoint.com/sites/vacobcro
+        }
+        vaww.vashare.vba.va.gov/sites/331edu/ {
+            data dvagov.sharepoint.com/sites/VBA331EDU
+        }
+        vaww.vashare.vba.va.gov/sites/amosharepoint/ {
+            data dvagov.sharepoint.com/sites/VBAAMOSharePoint
+        }
+        vaww.vashare.vba.va.gov/sites/anc-463/ {
+            data dvagov.sharepoint.com/sites/VBAANC463
+        }
+        vaww.vashare.vba.va.gov/sites/aus-281/ {
+            data dvagov.sharepoint.com/sites/VBAAUS281
+        }
+        vaww.vashare.vba.va.gov/sites/bal-313 {
+            data dvagov.sharepoint.com/sites/vbabal313
+        }
+        vaww.vashare.vba.va.gov/sites/baltimoreqrt/ {
+            data dvagov.sharepoint.com/sites/VBABaltimoreQRT
+        }
+        vaww.vashare.vba.va.gov/sites/basqualitytraining/ {
+            data dvagov.sharepoint.com/sites/VBABASqualitytraining
+        }
+        vaww.vashare.vba.va.gov/sites/bdnsupport/ {
+            data dvagov.sharepoint.com/sites/VBABDNSupport
+        }
+        vaww.vashare.vba.va.gov/sites/buffalo {
+            data dvagov.sharepoint.com/sites/vbabuffalo
+        }
+        vaww.vashare.vba.va.gov/sites/bvavciworkgroup/ {
+            data dvagov.sharepoint.com/sites/VBAbvavciworkgroup
+        }
+        vaww.vashare.vba.va.gov/sites/casualtyassistance/ {
+            data dvagov.sharepoint.com/sites/VBACasualtyAssistance
+        }
+        vaww.vashare.vba.va.gov/sites/cladoccenter2015 {
+            data dvagov.sharepoint.com/sites/cladoccenter2015
+        }
+        vaww.vashare.vba.va.gov/sites/cosvba/ {
+            data dvagov.sharepoint.com/sites/VBACOS
+        }
+        vaww.vashare.vba.va.gov/sites/crodo/ {
+            data dvagov.sharepoint.com/sites/VBACRODO
+        }
+        vaww.vashare.vba.va.gov/sites/css/ {
+            data dvagov.sharepoint.com/sites/OITEPMOCSS/
+        }
+        vaww.vashare.vba.va.gov/sites/cvebstpaul/ {
+            data dvagov.sharepoint.com/sites/VBACVEBSTPAUL
+        }
+        vaww.vashare.vba.va.gov/sites/den395hrc/ {
+            data dvagov.sharepoint.com/sites/VBADEN395HRC
+        }
+        vaww.vashare.vba.va.gov/sites/den-339/ {
+            data dvagov.sharepoint.com/sites/VBADen339
+        }
+        vaww.vashare.vba.va.gov/sites/det-329/ {
+            data dvagov.sharepoint.com/sites/VBADet329
+        }
+        vaww.vashare.vba.va.gov/sites/det-329hrc/ {
+            data dvagov.sharepoint.com/sites/VBADET329HRC
+        }
+        vaww.vashare.vba.va.gov/sites/dmcslc/ {
+            data dvagov.sharepoint.com/sites/VBADMCSLC
+        }
+        vaww.vashare.vba.va.gov/sites/dqi_usaspending/ {
+            data dvagov.sharepoint.com/sites/VBADQIUSAPending
+        }
+        vaww.vashare.vba.va.gov/sites/earea/ {
+            data dvagov.sharepoint.com/sites/VBAEAREA
+        }
+        vaww.vashare.vba.va.gov/sites/edu_ssd {
+            data dvagov.sharepoint.com/sites/vbaedu_ssd
+        }
+        vaww.vashare.vba.va.gov/sites/eedi {
+            data dvagov.sharepoint.com/sites/vbaeedi
+        }
+        vaww.vashare.vba.va.gov/sites/epsafetysecurity {
+            data dvagov.sharepoint.com/sites/vbaepsafetysecurity
+        }
+        vaww.vashare.vba.va.gov/sites/hartford/ {
+            data dvagov.sharepoint.com/sites/VBAHartford
+        }
+        vaww.vashare.vba.va.gov/sites/healthevet {
+            data dvagov.sharepoint.com/sites/vbahealthevet
+        }
+        vaww.vashare.vba.va.gov/sites/hin-282-ais/ {
+            data dvagov.sharepoint.com/sites/VBAHIN282AIS
+        }
+        vaww.vashare.vba.va.gov/sites/hin-282ops {
+            data dvagov.sharepoint.com/sites/vbahin282ops
+        }
+        vaww.vashare.vba.va.gov/sites/hineseng/ {
+            data dvagov.sharepoint.com/sites/VBAHinesENG
+        }
+        vaww.vashare.vba.va.gov/sites/hinesitc/ {
+            data dvagov.sharepoint.com/sites/VBAHinesITC
+        }
+        vaww.vashare.vba.va.gov/sites/hou-362/ {
+            data dvagov.sharepoint.com/sites/VBAHOU362
+        }
+        vaww.vashare.vba.va.gov/sites/houston {
+            data dvagov.sharepoint.com/sites/VBAHouston
+        }
+        vaww.vashare.vba.va.gov/sites/hrcbal/ {
+            data dvagov.sharepoint.com/sites/VBAHRCBAL
+        }
+        vaww.vashare.vba.va.gov/sites/hrcdetroit {
+            data dvagov.sharepoint.com/sites/vbahrcdetroit
+        }
+        vaww.vashare.vba.va.gov/sites/jac-393hrc/ {
+            data dvagov.sharepoint.com/sites/VBAJAC393HRC
+        }
+        vaww.vashare.vba.va.gov/sites/lan-344/ {
+            data dvagov.sharepoint.com/sites/VBALAN344
+        }
+        vaww.vashare.vba.va.gov/sites/lin/ {
+            data dvagov.sharepoint.com/sites/VBALin
+        }
+        vaww.vashare.vba.va.gov/sites/mediarepository/ {
+            data dvagov.sharepoint.com/sites/VBAMediaRepository
+        }
+        vaww.vashare.vba.va.gov/sites/milwaukee/ {
+            data dvagov.sharepoint.com/sites/VBAMilwaukee
+        }
+        vaww.vashare.vba.va.gov/sites/miw-330 {
+            data dvagov.sharepoint.com/sites/VBAMIW-330
+        }
+        vaww.vashare.vba.va.gov/sites/newark/ {
+            data dvagov.sharepoint.com/sites/VBANewark
+        }
+        vaww.vashare.vba.va.gov/sites/oak-343/ {
+            data dvagov.sharepoint.com/sites/VBAOAK343
+        }
+        vaww.vashare.vba.va.gov/sites/occm {
+            data dvagov.sharepoint.com/sites/vbaoccm
+        }
+        vaww.vashare.vba.va.gov/sites/officeofmanagement {
+            data dvagov.sharepoint.com/sites/vbaofficeofmanagement
+        }
+        vaww.vashare.vba.va.gov/sites/ofoplaybooks/ {
+            data dvagov.sharepoint.com/sites/VBAOFOPlaybooks
+        }
+        vaww.vashare.vba.va.gov/sites/ormfiscalsystems241d {
+            data dvagov.sharepoint.com/sites/vbaormfiscalsystems241d
+        }
+        vaww.vashare.vba.va.gov/sites/ortaccess/ {
+            data dvagov.sharepoint.com/sites/VBAOrtaccess
+        }
+        vaww.vashare.vba.va.gov/sites/osp {
+            data dvagov.sharepoint.com/sites/vbaosp
+        }
+        vaww.vashare.vba.va.gov/sites/oteei {
+            data dvagov.sharepoint.com/sites/vbaoteei
+        }
+        vaww.vashare.vba.va.gov/sites/pacific/ {
+            data dvagov.sharepoint.com/sites/VBAPacific
+        }
+        vaww.vashare.vba.va.gov/sites/phipmc/ {
+            data dvagov.sharepoint.com/sites/VBAPHIPMC
+        }
+        vaww.vashare.vba.va.gov/sites/pho-345/ {
+            data dvagov.sharepoint.com/sites/VBAPHO345
+        }
+        vaww.vashare.vba.va.gov/sites/pir/ {
+            data dvagov.sharepoint.com/sites/VBAPIR
+        }
+        vaww.vashare.vba.va.gov/sites/pittsburgh/ {
+            data dvagov.sharepoint.com/sites/VBAPittsburgh
+        }
+        vaww.vashare.vba.va.gov/sites/portlandvaro {
+            data dvagov.sharepoint.com/sites/vbaportlandvaro
+        }
+        vaww.vashare.vba.va.gov/sites/pprb/ {
+            data dvagov.sharepoint.com/sites/VBAPPRB
+        }
+        vaww.vashare.vba.va.gov/sites/pro-304mgt/ {
+            data dvagov.sharepoint.com/sites/VBAPRO304MGT
+        }
+        vaww.vashare.vba.va.gov/sites/pro-304pbtl/ {
+            data dvagov.sharepoint.com/sites/VBAPRO304PBTL
+        }
+        vaww.vashare.vba.va.gov/sites/providencerophotobook/ {
+            data dvagov.sharepoint.com/sites/VBAProvidenceROPhotobook
+        }
+        vaww.vashare.vba.va.gov/sites/r5-rms/ {
+            data dvagov.sharepoint.com/sites/VBAR5RMS
+        }
+        vaww.vashare.vba.va.gov/sites/rdt/ {
+            data dvagov.sharepoint.com/sites/VBARDT
+        }
+        vaww.vashare.vba.va.gov/sites/saj-355/ {
+            data dvagov.sharepoint.com/sites/VBASAJ355
+        }
+        vaww.vashare.vba.va.gov/sites/sea-346/ {
+            data dvagov.sharepoint.com/sites/VBASEA346
+        }
+        vaww.vashare.vba.va.gov/sites/sid-policies {
+            data dvagov.sharepoint.com/sites/sid-policies
+        }
+        vaww.vashare.vba.va.gov/sites/slc/ {
+            data dvagov.sharepoint.com/sites/VBASLC
+        }
+        vaww.vashare.vba.va.gov/sites/slcfhteams/ {
+            data dvagov.sharepoint.com/sites/VBASLCFHTeams
+        }
+        vaww.vashare.vba.va.gov/sites/splncior05/ {
+            data dvagov.sharepoint.com/sites/VBASPLNCIOR05
+        }
+        vaww.vashare.vba.va.gov/sites/splncip/ {
+            data dvagov.sharepoint.com/sites/OITSPLNCIO1
+        }
+        vaww.vashare.vba.va.gov/sites/stl-331 {
+            data dvagov.sharepoint.com/sites/vbastl-331
+        }
+        vaww.vashare.vba.va.gov/sites/stl-331/ {
+            data dvagov.sharepoint.com/sites/VBASTL-331
+        }
+        vaww.vashare.vba.va.gov/sites/terminalserver {
+            data dvagov.sharepoint.com/sites/vbaterminalserver
+        }
+        vaww.vashare.vba.va.gov/sites/vacorp/ {
+            data dvagov.sharepoint.com/sites/VBAVACORP
+        }
+        vaww.vashare.vba.va.gov/sites/vbadaywatch {
+            data dvagov.sharepoint.com/sites/vbadaywatch
+        }
+        vaww.vashare.vba.va.gov/sites/vbafcworkflow/ {
+            data dvagov.sharepoint.com/sites/VBAFCWorkFlow
+        }
+        vaww.vashare.vba.va.gov/sites/vbafmc/ {
+            data dvagov.sharepoint.com/sites/VBAFMC
+        }
+        vaww.vashare.vba.va.gov/sites/vbaofficeofresourcemanagement {
+            data dvagov.sharepoint.com/sites/VBAOFM
+        }
+        vaww.vashare.vba.va.gov/sites/vbaohr/ {
+            data dvagov.sharepoint.com/sites/VBAOHR
+        }
+        vaww.vashare.vba.va.gov/sites/vbaoutreachpublication/ {
+            data dvagov.sharepoint.com/sites/VBAOutreachpublication
+        }
+        vaww.vashare.vba.va.gov/sites/vbaphysicalsecurity {
+            data dvagov.sharepoint.com/sites/vbaphysicalsecurity
+        }
+        vaww.vashare.vba.va.gov/sites/vbatransformationgovernance {
+            data dvagov.sharepoint.com/sites/vbatransformationgovernance
+        }
+        vaww.vashare.vba.va.gov/sites/virec/ {
+            data dvagov.sharepoint.com/sites/VBAVIREC
+        }
+        vaww.vashare.vba.va.gov/sites/vreservice/ {
+            data dvagov.sharepoint.com/sites/VBAVREService
+        }
+        vaww.vashare.vba.va.gov/sites/wacoiso/ {
+            data dvagov.sharepoint.com/sites/vbawacoiso
+        }
+        vaww.vashare.vba.va.gov/sites/wacorO349/ {
+            data dvagov.sharepoint.com/sites/VBAWacoRO349
+        }
+        vaww.vashare.vba.va.gov/sites/was-101ohr/ {
+            data dvagov.sharepoint.com/sites/VBAWAS101OHR
+        }
+        vaww.vashare.vba.va.gov/sites/wasp {
+            data dvagov.sharepoint.com/sites/vbawasp
+        }
+        vaww.vashare.vba.va.gov/sites/westernhrc395 {
+            data dvagov.sharepoint.com/sites/vbawesternhrc395
+        }
+        vaww.vashare.vha.va.gov/sites/2019akgag {
+            data dvagov.sharepoint.com/sites/vha2019akgag
+        }
+        vaww.vashare.vha.va.gov/sites/arp/ {
+            data dvagov.sharepoint.com/sites/VHAARP
+        }
+        vaww.vashare.vha.va.gov/sites/ba/ {
+            data dvagov.sharepoint.com/sites/VHABA
+        }
+        vaww.vashare.vha.va.gov/sites/cbtcp/ {
+            data dvagov.sharepoint.com/sites/VHACBTCP
+        }
+        vaww.vashare.vha.va.gov/sites/cisark/ {
+            data dvagov.sharepoint.com/sites/VHACISARK
+        }
+        vaww.vashare.vha.va.gov/sites/cs/ {
+            data dvagov.sharepoint.com/sites/VHACS
+        }
+        vaww.vashare.vha.va.gov/sites/ebusmgt/ {
+            data dvagov.sharepoint.com/sites/vhaebusmgt
+        }
+        vaww.vashare.vha.va.gov/sites/eccm/ {
+            data dvagov.sharepoint.com/sites/VHAECCM
+        }
+        vaww.vashare.vha.va.gov/sites/eesappealsboardhearings/ {
+            data dvagov.sharepoint.com/sites/VHAEESAppealsBoardHearings
+        }
+        vaww.vashare.vha.va.gov/sites/facilitatortraining/ {
+            data dvagov.sharepoint.com/sites/VHAfacilitatortraining
+        }
+        vaww.vashare.vha.va.gov/sites/hds/ {
+            data dvagov.sharepoint.com/sites/VHAHDS
+        }
+        vaww.vashare.vha.va.gov/sites/hes-his-admins/ {
+            data dvagov.sharepoint.com/sites/VHAHESHISADMINS
+        }
+        vaww.vashare.vha.va.gov/sites/hudvash/ {
+            data dvagov.sharepoint.com/sites/VHAHudvash
+        }
+        vaww.vashare.vha.va.gov/sites/innovations/ {
+            data dvagov.sharepoint.com/sites/VHAInnovations
+        }
+        vaww.vashare.vha.va.gov/sites/ipt {
+            data dvagov.sharepoint.com/sites/vhaipt
+        }
+        vaww.vashare.vha.va.gov/sites/mhvredesign {
+            data dvagov.sharepoint.com/sites/mhvredesign
+        }
+        vaww.vashare.vha.va.gov/sites/nationalhometeleheath/ {
+            data dvagov.sharepoint.com/sites/VHANationalHomeTeleHealth
+        }
+        vaww.vashare.vha.va.gov/sites/ntrt/ {
+            data dvagov.sharepoint.com/sites/VHANTRT
+        }
+        vaww.vashare.vha.va.gov/sites/omla/ {
+            data dvagov.sharepoint.com/sites/VHAOMLA
+        }
+        vaww.vashare.vha.va.gov/sites/pcaauditportal/ {
+            data dvagov.sharepoint.com/sites/VHAPCAAuditPortal
+        }
+        vaww.vashare.vha.va.gov/sites/pcsclinical/ {
+            data dvagov.sharepoint.com/sites/VHAPCSclinical
+        }
+        vaww.vashare.vha.va.gov/sites/pmdb {
+            data dvagov.sharepoint.com/sites/vhapmdb
+        }
+        vaww.vashare.vha.va.gov/sites/poung/ {
+            data dvagov.sharepoint.com/sites/VHAPOUNG
+        }
+        vaww.vashare.vha.va.gov/sites/rdm/ {
+            data dvagov.sharepoint.com/sites/VHARDM
+        }
+        vaww.vashare.vha.va.gov/sites/shreveport/ {
+            data dvagov.sharepoint.com/sites/VHAShreveport
+        }
+        vaww.vashare.vha.va.gov/sites/suicideprevention/ {
+            data dvagov.sharepoint.com/sites/VHASuicidePrevention
+        }
+        vaww.vashare.vha.va.gov/sites/supplychainguioverlay/ {
+            data dvagov.sharepoint.com/sites/VHASupplyChainGUIOverlay
+        }
+        vaww.vashare.vha.va.gov/sites/telehealthdirector {
+            data dvagov.sharepoint.com/sites/vhatelehealthdirector
+        }
+        vaww.vashare.vha.va.gov/sites/telehealthquality {
+            data dvagov.sharepoint.com/sites/vhatelehealthquality
+        }
+        vaww.vashare.vha.va.gov/sites/ts {
+            data dvagov.sharepoint.com/sites/vhats
+        }
+        vaww.vashare.vha.va.gov/sites/vainnovatorsnetwork/ {
+            data dvagov.sharepoint.com/sites/VHAVAINNOVATORSNETWORK
+        }
+        vaww.vashare.vha.va.gov/sites/vetcenters/ {
+            data dvagov.sharepoint.com/sites/VHAVetcenters
+        }
+        vaww.vashare.vha.va.gov/sites/vhaacbm/ {
+            data dvagov.sharepoint.com/sites/VHAACBM
+        }
+        vaww.vashare.vha.va.gov/sites/washingtondc/ {
+            data dvagov.sharepoint.com/sites/VHAWashingtondc
+        }
+    }
+    type string
+}
+
+
+#######################################
+#  Current iRule after wave 83
+#
+#  tmsh list /ltm rule oed_protal_redirect_6
+#######################################
+
+ltm rule oed_protal_redirect_6 {
+when HTTP_REQUEST {
+	set browser_url [string tolower [HTTP::host][HTTP::uri]/]
+
+	if { [class match $browser_url contains datagroup_uri_list_lc] }  { 
+
+        set part_of_url_matched [class match -name $browser_url contains datagroup_uri_list_lc]
+		set rest_of_uri [string map -nocase [list $part_of_url_matched /] $browser_url]
+		set redirect_site_from_datagroup [class match -value $browser_url contains datagroup_uri_list_lc]
+
+		set redirect_value "$redirect_site_from_datagroup$rest_of_uri"
+
+		if {$redirect_value ends_with "/"} {
+			set rvlengthnew [expr {[string length $redirect_value] -2}] 
+			set redirect_value [string range $redirect_value 0 $rvlengthnew]
+		}
+		
+		HTTP::redirect "http://$redirect_value"
+	}
+}
+}
